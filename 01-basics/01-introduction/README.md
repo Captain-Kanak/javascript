@@ -5,6 +5,12 @@
 JavaScript is a high-level, dynamically typed programming language
 primarily used to add behavior and interactivity to applications.
 
+### Important Points
+
+- JavaScript is dynamically typed.
+- JavaScript is interpreted/JIT-compiled by modern engines.
+- JavaScript is standardized by ECMAScript.
+
 ### What can JavaScript do?
 
 - Manipulate web pages
