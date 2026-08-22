@@ -22,6 +22,7 @@ primarily used to add behavior and interactivity to applications.
 const name = "Kanak";
 
 console.log(`Hello, ${name}!`);
+```
 
 ## 2. Why was JavaScript created?
 
@@ -46,4 +47,7 @@ console.log(`Hello, ${name}!`);
 ## Interview Questions
 
 ## Practice
+
+```
+
 ```
