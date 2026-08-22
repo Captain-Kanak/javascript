@@ -21,7 +21,7 @@ primarily used to add behavior and interactivity to applications.
 ```js
 const language = "JavaScript";
 
-console.log(`I am learning, ${language}!`); // Hello Kanak
+console.log(`I am learning, ${language}!`); // I am learning JavaScript!
 ```
 
 ## 2. Why was JavaScript created?
