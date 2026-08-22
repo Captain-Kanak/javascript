@@ -19,9 +19,9 @@ primarily used to add behavior and interactivity to applications.
 ### Simple Example
 
 ```js
-const name = "Kanak";
+const language = "JavaScript";
 
-console.log(`Hello, ${name}!`);
+console.log(`I am learning, ${language}!`); // Hello Kanak
 ```
 
 ## 2. Why was JavaScript created?
