@@ -2,7 +2,7 @@
 
 ## 1. What is JavaScript?
 
-JavaScript is a high-level, dynamically typed programming language primarily used to add behavior, logic, and interactivity to applications.
+JavaScript is a high-level, interpreted, dynamically typed programming language primarily used to add behavior, logic, and interactivity to applications.
 
 JavaScript was initially created for web browsers, but today it can run in many different environments, including browsers, servers, desktop applications, mobile applications, and command-line tools.
 
@@ -139,9 +139,12 @@ JavaScript implements the specification
 JavaScript is the programming language developers use.
 
 ```js
-const name = "Kanak";
+const player = {
+  name: "Lionel Messi",
+  passion: "Footballer",
+};
 
-console.log(name);
+console.log(`${player.name} is the Greatest of All Time.`);
 ```
 
 ### ECMAScript
