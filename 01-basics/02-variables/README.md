@@ -133,6 +133,7 @@ A `let` variable can be reassigned but cannot be redeclared in the same scope.
 - Can be reassigned.
 - Cannot be redeclared in the same scope.
 - Hoisted but remains in the Temporal Dead Zone (TDZ) until its declaration is reached.
+- During TDZ period The variable exists, but you cannot access it yet.
 
 ---
 
