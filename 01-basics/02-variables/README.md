@@ -310,12 +310,6 @@ Assigning the initial value:
 username = "Jhon";
 ```
 
-You can also do both together:
-
-```js
-let username = "Jhon";
-```
-
 ### Example
 
 ```js
@@ -324,6 +318,12 @@ let score; // Declaration
 score = 100; // Initialization
 
 console.log(score);
+```
+
+You can also do both together:
+
+```js
+let username = "Jhon";
 ```
 
 ---
