@@ -47,16 +47,6 @@ const
 
 Example:
 
-```js
-let age;
-```
-
-A variable can also be declared and initialized at the same time:
-
-```js
-let age = 25;
-```
-
 ### Declaration
 
 ```js
@@ -68,10 +58,16 @@ The variable exists, but no value has been assigned to it yet.
 ### Initialization
 
 ```js
-let age = 25;
+age = 25;
 ```
 
 The variable is declared and given its initial value.
+
+```js
+let age = 25;
+```
+
+A variable can also be declared and initialized at the same time:
 
 ---
 
