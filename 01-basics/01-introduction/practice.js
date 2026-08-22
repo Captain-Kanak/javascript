@@ -3,6 +3,7 @@
 // 🎯 Task: Create a variable containing your name and
 //           print it to the console.
 // =====================================================================
+
 const myName = "John Doe";
 console.log(myName);
 
@@ -10,6 +11,7 @@ console.log(myName);
 // 🟢 PRACTICE 02 — Addition & Arithmetic
 // 🎯 Task: Create two numbers and print their sum.
 // =====================================================================
+
 const num1 = 10;
 const num2 = 20;
 
@@ -20,6 +22,7 @@ console.log(num1 + num2);
 // 🎯 Task: Create an age variable and determine whether the
 //           person is an adult or a minor.
 // =====================================================================
+
 const age = 25;
 
 if (age >= 18) {
@@ -37,6 +40,7 @@ if (age >= 18) {
 //
 // 💡 Hint: Then print all the information using a template literal.
 // =====================================================================
+
 const myName2 = "John Doe";
 const myAge = 30;
 const profession = "Software Engineer";
@@ -50,6 +54,7 @@ console.log(
 // 🎯 Task: Create a product with a price and quantity.
 //           Calculate and print the total price.
 // =====================================================================
+
 const product = {
   name: "Laptop",
   price: 1000,
@@ -67,6 +72,7 @@ console.log(
 //           If true  → Print "Welcome"
 //           If false → Print "Please log in"
 // =====================================================================
+
 const isLoggedIn = true;
 
 if (isLoggedIn) {
@@ -83,6 +89,7 @@ if (isLoggedIn) {
 //      I am learning JavaScript.
 //      JavaScript was created in 1995.
 // =====================================================================
+
 const myName3 = "John Doe";
 
 console.log(`My name is ${myName3}.`);
