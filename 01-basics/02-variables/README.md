@@ -142,22 +142,25 @@ A `let` variable can be reassigned but cannot be redeclared in the same scope.
 `const` is used when a variable should not be reassigned.
 
 ```js
-const name = "Jhon";
+const PI = 3.1416;
 ```
 
 A `const` variable must be initialized when it is declared.
 
 ```js
+const name = "Jhon";
+
 // Error
 const name;
 ```
 
-A `const` variable cannot be reassigned:
+A `const` variable cannot be redeclared and reassigned:
 
 ```js
 const age = 25;
 
 // Error
+// const age = 28;
 // age = 30;
 ```
 
