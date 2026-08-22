@@ -63,6 +63,8 @@ age = 25;
 
 The variable is declared and given its initial value.
 
+### Declaration & Initialization
+
 ```js
 let age = 25;
 ```
