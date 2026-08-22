@@ -139,12 +139,12 @@ JavaScript implements the specification
 JavaScript is the programming language developers use.
 
 ```js
-const player = {
-  name: "Lionel Messi",
-  passion: "Footballer",
+const product = {
+  name: "MacBook Pro",
+  price: 1999,
 };
 
-console.log(`${player.name} is the Greatest of All Time.`);
+console.log(`${product.name} costs $${product.price}.`);
 ```
 
 ### ECMAScript
@@ -216,7 +216,7 @@ const result = 10 + 20;
 console.log(result);
 ```
 
-The computer cannot directly execute this source code as-is.
+The computer cannot directly execute this source code as it is.
 
 The JavaScript engine processes the code and executes the operations required by the program.
 
@@ -333,7 +333,7 @@ Node.js Runtime
 For example:
 
 ```js
-const fs = require("fs");
+import fs from "fs";
 
 const data = fs.readFileSync("file.txt", "utf8");
 
@@ -507,11 +507,11 @@ The engine processes the source code and executes the required operations.
 JavaScript uses a call stack to keep track of currently executing functions.
 
 ```js
-function greet() {
-  console.log("Hello");
+function greet(user) {
+  console.log(`Hello ${user}.`);
 }
 
-greet();
+greet("Jhon");
 ```
 
 Conceptually:
