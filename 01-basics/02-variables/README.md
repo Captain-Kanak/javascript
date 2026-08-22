@@ -313,11 +313,11 @@ username = "Jhon";
 ### Example
 
 ```js
-let score; // Declaration
+let username; // Declaration
 
-score = 100; // Initialization
+username = "Jhon"; // Initialization
 
-console.log(score);
+console.log(username);
 ```
 
 You can also do both together:
