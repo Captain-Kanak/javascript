@@ -15,10 +15,12 @@ Type conversion means changing a value from one data type to another.
 ```js
 const age = "25";
 
+console.log(typeof age); // string
+
 const numberAge = Number(age);
 
 console.log(numberAge); // 25
-console.log(typeof numberAge); // "number"
+console.log(typeof numberAge); // number
 ```
 
 Here:
@@ -74,7 +76,7 @@ const value = 123;
 const result = String(value);
 
 console.log(result); // "123"
-console.log(typeof result); // "string"
+console.log(typeof result); // string
 ```
 
 More examples:
@@ -124,6 +126,7 @@ const age = 25;
 const message = `I am ${age} years old.`;
 
 console.log(message);
+console.log(typeof message); // string
 ```
 
 ---
@@ -148,7 +151,7 @@ const value = "42";
 const result = Number(value);
 
 console.log(result); // 42
-console.log(typeof result); // "number"
+console.log(typeof result); // number
 ```
 
 Examples:
@@ -168,7 +171,7 @@ Number("hello"); // NaN
 `NaN` means **Not-a-Number**. Its JavaScript type is still `number`.
 
 ```js
-console.log(typeof NaN); // "number"
+console.log(typeof NaN); // number
 ```
 
 ---
@@ -271,6 +274,7 @@ Most other values are truthy.
 
 ```js
 Boolean("hello"); // true
+Boolean(" "); // true
 Boolean("0"); // true
 Boolean([]); // true
 Boolean({}); // true
@@ -317,7 +321,7 @@ Primitive values can be wrapped in objects using wrapper constructors, although 
 ```js
 const value = Object(10);
 
-console.log(value);
+console.log(value); // [Number: 10]
 console.log(typeof value); // "object"
 ```
 
@@ -420,11 +424,11 @@ A common real-world example is form input.
 ```js
 const age = "25";
 
-console.log(typeof age); // "string"
+console.log(typeof age); // string
 
 const numericAge = Number(age);
 
-console.log(typeof numericAge); // "number"
+console.log(typeof numericAge); // number
 ```
 
 This matters when performing calculations:
@@ -543,7 +547,7 @@ They have different purposes.
 ```js
 const value = Number("hello");
 
-console.log(typeof value); // "number"
+console.log(typeof value); // number
 ```
 
 ### Mistake 4: Thinking `"false"` is false
@@ -889,26 +893,3 @@ Converted value: 250
 Converted type: number
 Is valid number: true
 ```
-
----
-
-## What's Next?
-
-After completing type conversion, the next topic is:
-
-**04 — Operators**
-
-In the next topic, you will learn how JavaScript performs operations using:
-
-- Arithmetic operators
-- Assignment operators
-- Comparison operators
-- Equality operators
-- Logical operators
-- Unary operators
-- Increment and decrement
-- Ternary operator
-- Nullish coalescing
-- Optional chaining
-- Operator precedence
-- Practical operator behavior
