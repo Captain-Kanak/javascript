@@ -596,4 +596,4 @@ Explain why modifying the property works even though the variable was declared w
 
 ## 16. What's Next?
 
-After completing this topic, the next step is to practice **data-types**.
+After completing this topic, the next step is to practice **data types**.

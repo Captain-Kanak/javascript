@@ -954,4 +954,4 @@ Include at least:
 
 ## 24. What's Next?
 
-After completing this topic, the next step is to practice **type-conversion**.
+After completing this topic, the next step is to practice **type conversion**.
