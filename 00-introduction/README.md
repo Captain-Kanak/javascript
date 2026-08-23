@@ -716,9 +716,3 @@ JavaScript was created in 1995.
 ### Practice 8
 
 Run one JavaScript program in a browser console and another using Node.js. Observe the differences between the two environments.
-
----
-
-## 14. What's Next?
-
-After completing this topic, the next step is to practice **variables**.

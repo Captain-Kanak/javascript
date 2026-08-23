@@ -949,9 +949,3 @@ Include at least:
 - Object
 - Array
 - Function
-
----
-
-## 24. What's Next?
-
-After completing this topic, the next step is to practice **type conversion**.

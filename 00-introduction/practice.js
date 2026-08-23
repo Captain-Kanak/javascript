@@ -1,16 +1,14 @@
-// =====================================================================
-// 🟢 PRACTICE 01 — Variables & Console Output
-// 🎯 Task: Create a variable containing your name and
-//           print it to the console.
-// =====================================================================
+// PRACTICE 01 — Variables & Console Output
+// Task: Create a variable containing your name and print it to the console.
 
 const myName = "John Doe";
+
 console.log(myName);
 
 // =====================================================================
-// 🟢 PRACTICE 02 — Addition & Arithmetic
-// 🎯 Task: Create two numbers and print their sum.
-// =====================================================================
+
+// PRACTICE 02 — Addition & Arithmetic
+// Task: Create two numbers and print their sum.
 
 const num1 = 10;
 const num2 = 20;
@@ -18,10 +16,9 @@ const num2 = 20;
 console.log(num1 + num2);
 
 // =====================================================================
-// 🟢 PRACTICE 03 — Conditional Statements
-// 🎯 Task: Create an age variable and determine whether the
-//           person is an adult or a minor.
-// =====================================================================
+
+// PRACTICE 03 — Conditional Statements
+// Task: Create an age variable and determine whether the person is an adult or a minor.
 
 const age = 25;
 
@@ -32,14 +29,13 @@ if (age >= 18) {
 }
 
 // =====================================================================
-// 🟢 PRACTICE 04 — Template Literals
-// 🎯 Task: Create variables for:
-//      • Your name
-//      • Your age
-//      • Your profession
-//
-// 💡 Hint: Then print all the information using a template literal.
-// =====================================================================
+
+// PRACTICE 04 — Template Literals
+// Task: Create variables for:
+//      • your name
+//      • your age
+//      • your profession.
+// Hint: Then print all the information using a template literal.
 
 const myName2 = "John Doe";
 const myAge = 30;
@@ -50,10 +46,9 @@ console.log(
 );
 
 // =====================================================================
-// 🟢 PRACTICE 05 — Product Calculation
-// 🎯 Task: Create a product with a price and quantity.
-//           Calculate and print the total price.
-// =====================================================================
+
+// PRACTICE 05 — Product Calculation
+// Task: Create a product with a price and quantity. Calculate and print the total price.
 
 const product = {
   name: "Laptop",
@@ -67,11 +62,12 @@ console.log(
 );
 
 // =====================================================================
-// 🟢 PRACTICE 06 — Boolean & Conditional Logic
-// 🎯 Task: Create a variable called `isLoggedIn`.
-//           If true  → Print "Welcome"
-//           If false → Print "Please log in"
-// =====================================================================
+
+// PRACTICE 06 — Boolean & Conditional Logic
+// Task: Create a variable called `isLoggedIn`.
+// Hint:
+//      If true  → Print "Welcome"
+//      If false → Print "Please log in"
 
 const isLoggedIn = true;
 
@@ -82,13 +78,12 @@ if (isLoggedIn) {
 }
 
 // =====================================================================
-// 🟢 PRACTICE 07 — String Output
-// 🎯 Task: Create a JavaScript program that prints:
-//
-//      My name is ...
-//      I am learning JavaScript.
-//      JavaScript was created in 1995.
-// =====================================================================
+
+// PRACTICE 07 — String Output
+// Task: Create a JavaScript program that prints:
+//       My name is ...
+//       I am learning JavaScript.
+//       JavaScript was created in 1995.
 
 const myName3 = "John Doe";
 
@@ -97,20 +92,16 @@ console.log("I am learning JavaScript.");
 console.log("JavaScript was created in 1995.");
 
 // =====================================================================
-// 🟢 PRACTICE 08 — Browser vs Node.js
-// 🎯 Task: Run one JavaScript program in a browser console
-//           and another using Node.js.
-//
+
+// PRACTICE 08 — Browser vs Node.js
+// Task: Run one JavaScript program in a browser console and another using Node.js.
 // 🔍 Observe:
 //      • How the code runs
 //      • Available APIs
 //      • Global objects
 //      • Differences between the two environments
-// =====================================================================
 
-// =====================================================================
 // 🌐 BROWSER PROGRAM
-// =====================================================================
 
 console.log("Hello from the Browser!");
 
@@ -123,8 +114,8 @@ console.log("Current URL:", location.href);
 console.log("Fetch available:", typeof fetch);
 
 // =====================================================================
+
 // 🟢 NODE.JS PROGRAM
-// =====================================================================
 
 console.log("Hello from Node.js!");
 

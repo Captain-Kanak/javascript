@@ -591,9 +591,3 @@ Run it and explain the result.
 Create an object using `const`, then change one of its properties.
 
 Explain why modifying the property works even though the variable was declared with `const`.
-
----
-
-## 16. What's Next?
-
-After completing this topic, the next step is to practice **data types**.
