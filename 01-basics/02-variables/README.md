@@ -452,7 +452,7 @@ The same applies to `const`.
 
 ---
 
-## Key Takeaways
+## 13. Key Takeaways
 
 - A variable stores a value that can be used by a program.
 - JavaScript provides `var`, `let`, and `const`.
@@ -473,7 +473,7 @@ The same applies to `const`.
 
 ---
 
-## Interview Questions
+## 14. Interview Questions
 
 ### Beginner
 
@@ -503,7 +503,7 @@ The same applies to `const`.
 
 ---
 
-## Practice
+## 15. Practice
 
 ### Practice 1
 
@@ -591,3 +591,9 @@ Run it and explain the result.
 Create an object using `const`, then change one of its properties.
 
 Explain why modifying the property works even though the variable was declared with `const`.
+
+---
+
+## 16. What's Next?
+
+After completing this topic, the next step is to practice **data-types**.

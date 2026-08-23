@@ -954,6 +954,4 @@ Include at least:
 
 ## 24. What's Next?
 
-After completing this topic, the next step is to practice **operators and type-related behavior**.
-
-The next topic will build on these data types and explain how JavaScript performs operations with them.
+After completing this topic, the next step is to practice **type-conversion**.

@@ -623,7 +623,7 @@ if (age >= 18) {
 
 ---
 
-## Key Takeaways
+## 11. Key Takeaways
 
 - JavaScript is a high-level, dynamically typed programming language.
 - JavaScript was originally created to make web pages more interactive.
@@ -641,7 +641,7 @@ if (age >= 18) {
 
 ---
 
-## Interview Questions
+## 12. Interview Questions
 
 ### Beginner
 
@@ -671,7 +671,7 @@ if (age >= 18) {
 
 ---
 
-## Practice
+## 13. Practice
 
 ### Practice 1
 
@@ -716,3 +716,9 @@ JavaScript was created in 1995.
 ### Practice 8
 
 Run one JavaScript program in a browser console and another using Node.js. Observe the differences between the two environments.
+
+---
+
+## 14. What's Next?
+
+After completing this topic, the next step is to practice **variables**.
