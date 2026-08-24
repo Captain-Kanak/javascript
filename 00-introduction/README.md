@@ -93,9 +93,9 @@ For example, JavaScript can:
 
 ### Important Historical Point
 
-JavaScript was created by Brendan Eich in 1995 while he was working at Netscape.
+JavaScript was created by **Brendan Eich** in 1995 while he was working at **Netscape**.
 
-It was originally developed for the Netscape Navigator browser.
+It was originally developed for the **Netscape Navigator browser**.
 
 JavaScript was designed very quickly and initially had a different name, **Mocha**, which was later changed to **LiveScript** and eventually **JavaScript**.
 
