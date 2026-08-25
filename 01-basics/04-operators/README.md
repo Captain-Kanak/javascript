@@ -280,6 +280,7 @@ if (age >= 18) {
 JavaScript has two main forms of equality comparison.
 
 **Strict Equality `===`**
+
 Strict equality compares both `value` and `type`.
 
 ```js
@@ -303,6 +304,7 @@ console.log(5 !== "5"); // true
 ```
 
 **Loose Equality `==`**
+
 Loose equality can perform type coercion before comparison.
 
 ```js
@@ -316,6 +318,7 @@ console.log(5 != "10"); // true
 ```
 
 In most application code, prefer: `===` and `!==`.
+
 Because they make type differences explicit and make code easier to reason about.
 
 ---
