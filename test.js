@@ -1,5 +1,2 @@
-if (0n) {
-  console.log("Hello World");
-} else {
-  console.log("Goodbye World");
-}
+const value = new Number(100);
+console.log(value);

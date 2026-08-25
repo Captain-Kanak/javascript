@@ -34,10 +34,7 @@ JavaScript can be used to:
 ```js
 const language = "JavaScript";
 
-console.log(`I am learning ${language}!`);
-
-// output:
-// I am learning JavaScript!
+console.log(`I am learning ${language}!`); // I am learning JavaScript!
 ```
 
 ---
@@ -147,10 +144,7 @@ const product = {
   price: 1999,
 };
 
-console.log(`${product.name} costs $${product.price}.`);
-
-// output:
-// MacBook Pro costs 1999
+console.log(`${product.name} costs $${product.price}.`); // MacBook Pro costs 1999
 ```
 
 ### ECMAScript
@@ -219,10 +213,7 @@ JavaScript source code is written in a human-readable form:
 ```js
 const result = 10 + 20;
 
-console.log(result);
-
-// output:
-// 30
+console.log(result); // 30
 ```
 
 The computer cannot directly execute this source code as it is.
@@ -346,7 +337,7 @@ import fs from "fs";
 
 const data = fs.readFileSync("file.txt", "utf8");
 
-console.log(data);
+console.log(data); // "Hello world" from the file
 ```
 
 The file system functionality comes from Node.js, not from the ECMAScript language itself.
@@ -450,10 +441,7 @@ Buffer;
 Example:
 
 ```js
-console.log(process.version);
-
-// output:
-// v24.11.0
+console.log(process.version); // v24.11.0
 ```
 
 ### Comparison
@@ -509,10 +497,7 @@ const b = 20;
 
 const result = a + b;
 
-console.log(result);
-
-// output:
-// 30
+console.log(result); // 30
 ```
 
 The engine processes the source code and executes the required operations.
@@ -526,10 +511,7 @@ function greet(user) {
   console.log(`Hello ${user}.`);
 }
 
-greet("Jhon");
-
-// output:
-// Hello Jhon.
+greet("Jhon"); // Hello Jhon.
 ```
 
 Conceptually:
@@ -575,10 +557,7 @@ The event loop and asynchronous execution will be covered in much more detail in
 The simplest JavaScript program can print a message to the console.
 
 ```js
-console.log("Hello, JavaScript!");
-
-// output:
-// Hello, JavaScript!
+console.log("Hello, JavaScript!"); // Hello, JavaScript!
 ```
 
 ### Running in a Browser
@@ -586,10 +565,7 @@ console.log("Hello, JavaScript!");
 JavaScript can be executed using the browser's developer console.
 
 ```js
-console.log("Hello from the browser!");
-
-// output:
-// Hello from the browser!
+console.log("Hello from the browser!"); // Hello from the browser!
 ```
 
 ### Running with Node.js
@@ -625,10 +601,7 @@ JavaScript can store values in variables.
 ```js
 const language = "JavaScript";
 
-console.log(language);
-
-// output:
-// JavaScript
+console.log(language); // JavaScript
 ```
 
 ### Basic Calculation
@@ -639,10 +612,7 @@ const b = 20;
 
 const result = a + b;
 
-console.log(result);
-
-// output:
-// 30
+console.log(result); // 30
 ```
 
 ### Simple Decision

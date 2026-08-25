@@ -30,7 +30,7 @@ Here:
 string → number
 ```
 
-JavaScript provides several built-in ways to explicitly convert values.
+> JavaScript provides several built-in ways to explicitly convert values.
 
 ---
 
@@ -92,8 +92,8 @@ String(undefined); // "undefined"
 Arrays and objects can also be converted:
 
 ```js
-String([1, 2, 3]); // "1,2,3"
-String({}); // "[object Object]"
+console.log(String([1, 2, 3])); // "1,2,3"
+console.log(String({})); // "[object Object]"
 ```
 
 ### Using toString()
@@ -111,7 +111,7 @@ However, `toString()` cannot be called directly on `null` or `undefined`.
 ```js
 const value = null;
 
-// value.toString(); // TypeError
+value.toString(); // TypeError
 ```
 
 When the value may be `null` or `undefined`, `String(value)` is safer.
@@ -125,7 +125,7 @@ const age = 25;
 
 const message = `I am ${age} years old.`;
 
-console.log(message);
+console.log(message); // I am 25 years old.
 console.log(typeof message); // string
 ```
 
@@ -160,7 +160,7 @@ Examples:
 Number("100"); // 100
 Number("3.14"); // 3.14
 Number(""); // 0
-Number("   "); // 0
+Number(" "); // 0
 Number(true); // 1
 Number(false); // 0
 Number(null); // 0
@@ -191,7 +191,9 @@ It can stop when it reaches a character that cannot be part of the parsed intege
 parseInt("100px", 10); // 100
 ```
 
-The second argument is the radix (number base):
+The second argument is the `radix` (number base).
+
+Here, `radix` is `2`, which tells `parseInt()` to interpret the string as a **binary number**:
 
 ```js
 parseInt("101", 2); // 5
@@ -201,6 +203,15 @@ For decimal integers, prefer:
 
 ```js
 parseInt("42", 10);
+```
+
+The second argument can specify different number systems:
+
+```js
+parseInt("101", 2); // 5    → Binary
+parseInt("101", 8); // 65   → Octal
+parseInt("101", 10); // 101  → Decimal
+parseInt("101", 16); // 257  → Hexadecimal
 ```
 
 ---
@@ -248,6 +259,7 @@ Boolean(1); // true
 Boolean(0); // false
 Boolean("hello"); // true
 Boolean(""); // false
+Boolean(" "); // true
 ```
 
 The result is always `true` or `false`.
@@ -260,15 +272,7 @@ Values that behave like `false` in boolean contexts are called **falsy values**.
 
 Common falsy values include:
 
-```js
-false;
-0 - 0;
-0n;
-("");
-null;
-undefined;
-NaN;
-```
+`false`, `0 - 0`, `0n`, `("")`, `null`, `undefined`, `NaN`
 
 Most other values are truthy.
 
@@ -281,8 +285,6 @@ Boolean({}); // true
 Boolean("false"); // true
 ```
 
-The last value is truthy because it is a non-empty string.
-
 ---
 
 ## 10. Converting to BigInt
@@ -294,7 +296,7 @@ You can create a BigInt from an integer string:
 ```js
 const value = BigInt("9007199254740993");
 
-console.log(value);
+console.log(value); // 9007199254740993n
 ```
 
 You can also convert an integer number:
@@ -308,8 +310,8 @@ console.log(value); // 100n
 Be careful when converting numbers that are already outside the safe integer range because the original Number may already have lost precision.
 
 ```js
-typeof 100; // "number"
-typeof 100n; // "bigint"
+typeof 100; // number
+typeof 100n; // bigint
 ```
 
 ---
@@ -322,7 +324,7 @@ Primitive values can be wrapped in objects using wrapper constructors, although 
 const value = Object(10);
 
 console.log(value); // [Number: 10]
-console.log(typeof value); // "object"
+console.log(typeof value); // object
 ```
 
 Do not confuse:
@@ -334,12 +336,10 @@ Do not confuse:
 with:
 
 ```js
-new Number(10);
+new Number(10); // [Number: 10]
 ```
 
-The first is a primitive number. The second is a Number object.
-
-In normal code, prefer primitive values unless you have a specific reason to use wrapper objects.
+> The first is a primitive number. The second is a Number object. In normal code, prefer primitive values unless you have a specific reason to use wrapper objects.
 
 ---
 
