@@ -451,6 +451,9 @@ Example:
 
 ```js
 console.log(process.version);
+
+// output:
+// v24.11.0
 ```
 
 ### Comparison
@@ -507,6 +510,9 @@ const b = 20;
 const result = a + b;
 
 console.log(result);
+
+// output:
+// 30
 ```
 
 The engine processes the source code and executes the required operations.
@@ -521,6 +527,9 @@ function greet(user) {
 }
 
 greet("Jhon");
+
+// output:
+// Hello Jhon.
 ```
 
 Conceptually:
@@ -567,6 +576,9 @@ The simplest JavaScript program can print a message to the console.
 
 ```js
 console.log("Hello, JavaScript!");
+
+// output:
+// Hello, JavaScript!
 ```
 
 ### Running in a Browser
@@ -575,6 +587,9 @@ JavaScript can be executed using the browser's developer console.
 
 ```js
 console.log("Hello from the browser!");
+
+// output:
+// Hello from the browser!
 ```
 
 ### Running with Node.js
@@ -595,6 +610,12 @@ Then run:
 
 ```bash
 node hello.js
+```
+
+output:
+
+```js
+// Hello from Node.js!
 ```
 
 ### Variables
