@@ -244,3 +244,80 @@ console.log(value); // 8
 ---
 
 ## 6. Comparison Operators
+
+Comparison operators compare values and produce a boolean result.
+
+| Operator | Meaning               |
+| -------- | --------------------- |
+| `>`      | Greater than          |
+| `<`      | Less than             |
+| `>=`     | Greater than or equal |
+| `<=`     | Less than or equal    |
+
+Examples:
+
+```js
+console.log(10 > 5); // true
+console.log(10 < 5); // false
+console.log(10 >= 10); // true
+console.log(10 <= 10); // true
+```
+
+Comparison operators are commonly used in conditions:
+
+```js
+const age = 20;
+
+if (age >= 18) {
+  console.log("Adult");
+}
+```
+
+---
+
+## 7. Equality Operators
+
+JavaScript has two main forms of equality comparison.
+
+**Strict Equality `===`**
+Strict equality compares both `value` and `type`.
+
+```js
+console.log(5 === 5); // true
+console.log(5 === "5"); // false
+```
+
+The second comparison is false because:
+
+```text
+5   → number
+"5" → string
+```
+
+**Strict Inequality `!==`**
+
+```js
+console.log(5 !== 10); // true
+console.log(5 !== 5); // false
+console.log(5 !== "5"); // true
+```
+
+**Loose Equality `==`**
+Loose equality can perform type coercion before comparison.
+
+```js
+console.log(5 == "5"); // true
+```
+
+**Loose Inequality `!=`**
+
+```js
+console.log(5 != "10"); // true
+```
+
+In most application code, prefer: `===` and `!==`.
+Because they make type differences explicit and make code easier to reason about.
+
+---
+
+## 8. Logical Operators
