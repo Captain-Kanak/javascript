@@ -179,3 +179,68 @@ console.log("10" - 5); // 5
 ---
 
 ## 5. Assignment Operators
+
+Assignment operators assign values to variables.
+
+**Basic Assignment**
+
+```js
+let score = 100;
+```
+
+The `=` operator assigns `100` to `score`.
+
+**Compound Assignment Operators**
+JavaScript provides shorthand operators for modifying an existing value.
+
+| Operator | Equivalent       |
+| -------- | ---------------- |
+| `=`      | `a = value`      |
+| `+=`     | `a = a + value`  |
+| `-=`     | `a = a - value`  |
+| `*=`     | `a = a * value`  |
+| `/=`     | `a = a / value`  |
+| `%=`     | `a = a % value`  |
+| `**=`    | `a = a ** value` |
+
+Examples:
+
+```js
+let score = 100;
+
+score += 20;
+console.log(score); // 120
+
+score -= 10;
+console.log(score); // 110
+
+score *= 2;
+console.log(score); // 220
+
+score /= 2;
+console.log(score); // 110
+```
+
+Remainder assignment:
+
+```js
+let value = 10;
+
+value %= 3;
+
+console.log(value); // 1
+```
+
+Exponentiation assignment:
+
+```js
+let value = 2;
+
+value **= 3;
+
+console.log(value); // 8
+```
+
+---
+
+## 6. Comparison Operators
