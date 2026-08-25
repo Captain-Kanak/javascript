@@ -324,3 +324,68 @@ Because they make type differences explicit and make code easier to reason about
 ---
 
 ## 8. Logical Operators
+
+Logical operators are commonly used to combine or invert conditions.
+
+JavaScript provides:
+
+`&&`, `||` and `!`
+
+**Logical AND `&&`**
+
+`&&` evaluates multiple expressions and requires both conditions to be truthy for a typical boolean condition to succeed.
+
+```js
+const age = 25;
+const hasId = true;
+
+console.log(age >= 18 && hasId); // true
+```
+
+If one condition is false:
+
+```js
+const age = 16;
+const hasId = true;
+
+console.log(age >= 18 && hasId); // false
+```
+
+**Logical OR `||`**
+
+`||` evaluates expressions from left to right and returns the first truthy value.
+
+```js
+console.log(false || true); // true
+```
+
+Another example:
+
+```js
+const username = "";
+const fallback = "Guest";
+
+const name = username || fallback;
+
+console.log(name); // "Guest"
+```
+
+**Logical NOT `!`**
+
+`!` reverses the truthiness of a value.
+
+```js
+console.log(!true); // false
+console.log(!false); // true
+```
+
+It can also convert a value to boolean and then invert it:
+
+```js
+console.log(!0); // true
+console.log(!"hello"); // false
+```
+
+---
+
+## 9. Short-Circuit Evaluation
