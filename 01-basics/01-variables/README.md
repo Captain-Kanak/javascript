@@ -10,14 +10,18 @@ const passion = "Developer";
 
 Here:
 
-- `passion` is the variable name.
-- `"Developer"` is the value.
 - `const` declares the variable.
+- `passion` is the variable name.
+- `=` is the operator.
+- `"Developer"` is the value.
 
 We can access the stored value later:
 
 ```js
 console.log(passion);
+
+// output:
+// Developer
 ```
 
 ### Why Do We Need Variables?
@@ -31,6 +35,9 @@ const quantity = 2;
 const total = price * quantity;
 
 console.log(total);
+
+// output:
+// 200
 ```
 
 ---
@@ -39,11 +46,7 @@ console.log(total);
 
 JavaScript provides three keywords for declaring variables:
 
-```js
-var
-let
-const
-```
+`var`, `let` and `const`
 
 Example:
 
