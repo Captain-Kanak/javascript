@@ -18,10 +18,7 @@ Here:
 We can access the stored value later:
 
 ```js
-console.log(passion);
-
-// output:
-// Developer
+console.log(passion); // Developer
 ```
 
 ### Why Do We Need Variables?
@@ -34,10 +31,7 @@ const quantity = 2;
 
 const total = price * quantity;
 
-console.log(total);
-
-// output:
-// 200
+console.log(total); // 200
 ```
 
 ---
@@ -83,10 +77,7 @@ A variable can also be declared and initialized at the same time:
 ```js
 var name = "Jhon";
 
-console.log(name);
-
-// output:
-// Jhon
+console.log(name); // Jhon
 ```
 
 A `var` variable can be reassigned:
@@ -96,10 +87,7 @@ var age = 20;
 
 age = 25;
 
-console.log(age);
-
-// output:
-// 25
+console.log(age); // 25
 ```
 
 It can also be redeclared in the same scope:
@@ -108,10 +96,7 @@ It can also be redeclared in the same scope:
 var name = "John";
 var name = "Alex";
 
-console.log(name);
-
-// output:
-// Alex
+console.log(name); // Alex
 ```
 
 ### Important Characteristics of `var`
@@ -134,10 +119,7 @@ let age = 20;
 
 age = 25;
 
-console.log(age);
-
-// output:
-// 25
+console.log(age); // 25
 ```
 
 A `let` variable can be reassigned but cannot be redeclared in the same scope.
@@ -343,10 +325,7 @@ let username; // Declaration
 
 username = "Jhon"; // Initialization
 
-console.log(username);
-
-// output:
-// Jhon
+console.log(username); // Jhon
 ```
 
 You can also do both together:
@@ -368,10 +347,7 @@ let score = 10;
 
 score = 20;
 
-console.log(score);
-
-// output:
-// 20
+console.log(score); // 20
 ```
 
 With `const`, reassignment is not allowed:
@@ -398,10 +374,7 @@ const user = {
 
 user.name = "Alex";
 
-console.log(user.name);
-
-// output:
-// Alex
+console.log(user.name); // Alex
 ```
 
 > This works because we are modifying the object, not reassigning the `user` variable.
@@ -464,10 +437,7 @@ Consider:
 ```js
 console.log(name);
 
-var name = "Jhon";
-
-// output:
-// undefined
+var name = "Jhon"; // undefined
 ```
 
 The `var` declaration is hoisted, and its value is initially `undefined`.
@@ -477,12 +447,11 @@ Conceptually:
 ```js
 var name;
 
-console.log(name);
+console.log(name); // undefined
 
 name = "Jhon";
 
-// output:
-// undefined
+console.log(name); // Jhon
 ```
 
 ### `let` and `const`
@@ -490,12 +459,11 @@ name = "Jhon";
 `let` and `const` are also hoisted in the technical sense, but they cannot be accessed before their declaration because they are in the **Temporal Dead Zone (TDZ)**.
 
 ```js
-console.log(name);
+console.log(name); // ReferenceError
 
 let name = "Jhon";
 
-// output:
-// ReferenceError
+console.log(name); // Jhon
 ```
 
 This results in a `ReferenceError`.
