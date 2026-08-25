@@ -144,3 +144,38 @@ This means:
 ---
 
 ## 4. The + Operator and Strings
+
+The `+` operator has an important special behavior.
+
+It can perform numeric addition:
+
+```js
+console.log(10 + 5); // 15
+```
+
+Or string concatenation:
+
+```js
+console.log("Hello" + " World"); // "Hello World"
+```
+
+When a string is involved:
+
+```js
+console.log("10" + 5); // "105"
+```
+
+The number is converted to a string and concatenated.
+
+Compare:
+
+```js
+console.log("10" + 5); // "105"
+console.log("10" - 5); // 5
+```
+
+> This behavior is related to JavaScript's type coercion, which was covered in the **Type Conversion** topic.
+
+---
+
+## 5. Assignment Operators
