@@ -84,6 +84,9 @@ A variable can also be declared and initialized at the same time:
 var name = "Jhon";
 
 console.log(name);
+
+// output:
+// Jhon
 ```
 
 A `var` variable can be reassigned:
@@ -94,15 +97,21 @@ var age = 20;
 age = 25;
 
 console.log(age);
+
+// output:
+// 25
 ```
 
 It can also be redeclared in the same scope:
 
 ```js
-var name = "Alex";
 var name = "John";
+var name = "Alex";
 
 console.log(name);
+
+// output:
+// Alex
 ```
 
 ### Important Characteristics of `var`
@@ -123,12 +132,24 @@ It is used when a variable's value needs to change.
 ```js
 let age = 20;
 
-age = 21;
+age = 25;
 
 console.log(age);
+
+// output:
+// 25
 ```
 
 A `let` variable can be reassigned but cannot be redeclared in the same scope.
+
+```js
+let name = "Jhon";
+
+name = "Alex";
+
+// Error
+let name = "Alex";
+```
 
 ### Important Characteristics of `let`
 
@@ -142,7 +163,7 @@ A `let` variable can be reassigned but cannot be redeclared in the same scope.
 
 ## 5. `const`
 
-`const` is used when a variable should not be reassigned.
+`const` is used when a variable should not be reassigned or redeclared.
 
 ```js
 const PI = 3.1416;
@@ -160,11 +181,11 @@ const name;
 A `const` variable cannot be redeclared and reassigned:
 
 ```js
-const age = 25;
+const age = 20;
 
 // Error
-// const age = 28;
-// age = 30;
+const age = 25;
+age = 30;
 ```
 
 ### Important Characteristics of `const`
@@ -221,13 +242,15 @@ const user2 = "John";
 Invalid:
 
 ```js
-// const 1user = "Alex";
+const 1user = "Alex";
 ```
 
 ### Underscore
 
 ```js
 const user_name = "Alex";
+
+const _ex = "Example";
 ```
 
 ### Dollar Sign
@@ -241,9 +264,9 @@ const $price = 100;
 These are different variables:
 
 ```js
-const name = "Jack";
-const Name = "John";
-const NAME = "Alex";
+const name = "John";
+const Name = "Alex";
+const NAME = "Jack";
 ```
 
 ### Reserved Words
@@ -251,7 +274,7 @@ const NAME = "Alex";
 Reserved keywords cannot be used as variable names.
 
 ```js
-// const class = "JavaScript";
+const class = "JavaScript";
 ```
 
 ---
@@ -321,6 +344,9 @@ let username; // Declaration
 username = "Jhon"; // Initialization
 
 console.log(username);
+
+// output:
+// Jhon
 ```
 
 You can also do both together:
@@ -343,6 +369,9 @@ let score = 10;
 score = 20;
 
 console.log(score);
+
+// output:
+// 20
 ```
 
 With `const`, reassignment is not allowed:
@@ -351,7 +380,7 @@ With `const`, reassignment is not allowed:
 const score = 10;
 
 // Error
-// score = 20;
+score = 20;
 ```
 
 ### Important
@@ -364,15 +393,18 @@ For example:
 
 ```js
 const user = {
-  name: "Alex",
+  name: "John",
 };
 
-user.name = "John";
+user.name = "Alex";
 
 console.log(user.name);
+
+// output:
+// Alex
 ```
 
-This works because we are modifying the object, not reassigning the `user` variable.
+> This works because we are modifying the object, not reassigning the `user` variable.
 
 ---
 
@@ -393,7 +425,9 @@ For now, the important distinction is between `var` and `let`/`const`.
 
 ```js
 function example() {
-  var message = "Hello";
+  if (true) {
+    var message = "Hello";
+  }
 
   console.log(message);
 }
@@ -402,10 +436,16 @@ function example() {
 ### `let` and `const` are Block-Scoped
 
 ```js
-if (true) {
-  let message = "Hello";
-  const language = "JavaScript";
+function example() {
+  if (true) {
+    let message = "Hello";
+    const language = "JavaScript";
 
+    console.log(message);
+    console.log(language);
+  }
+
+  // ReferenceError
   console.log(message);
   console.log(language);
 }
@@ -425,6 +465,9 @@ Consider:
 console.log(name);
 
 var name = "Jhon";
+
+// output:
+// undefined
 ```
 
 The `var` declaration is hoisted, and its value is initially `undefined`.
@@ -437,6 +480,9 @@ var name;
 console.log(name);
 
 name = "Jhon";
+
+// output:
+// undefined
 ```
 
 ### `let` and `const`
@@ -447,6 +493,9 @@ name = "Jhon";
 console.log(name);
 
 let name = "Jhon";
+
+// output:
+// ReferenceError
 ```
 
 This results in a `ReferenceError`.
