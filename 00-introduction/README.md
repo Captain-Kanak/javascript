@@ -2,7 +2,7 @@
 
 ## 1. What is JavaScript?
 
-JavaScript is a high-level, interpreted, dynamically typed programming language primarily used to add behavior, logic, and interactivity to applications.
+JavaScript is a `high-level`, `interpreted`, `dynamically typed` programming language primarily used to add `behavior`, `logic`, and `interactivity` to applications.
 
 JavaScript was initially created for web browsers, but today it can run in many different environments, including browsers, servers, desktop applications, mobile applications, and command-line tools.
 
@@ -34,7 +34,10 @@ JavaScript can be used to:
 ```js
 const language = "JavaScript";
 
-console.log(`I am learning, ${language}!`);
+console.log(`I am learning ${language}!`);
+
+// output:
+// I am learning JavaScript!
 ```
 
 ---
@@ -93,7 +96,7 @@ For example, JavaScript can:
 
 ### Important Historical Point
 
-JavaScript was created by **Brendan Eich** in 1995 while he was working at **Netscape**.
+JavaScript was created by **Brendan Eich** in `1995` while he was working at **Netscape**.
 
 It was originally developed for the **Netscape Navigator browser**.
 
@@ -122,7 +125,7 @@ It specifies things such as:
 - Modules
 - Built-in objects and methods
 
-JavaScript is an implementation of the ECMAScript specification.
+> JavaScript is an implementation of the ECMAScript specification.
 
 ### Simple Relationship
 
@@ -145,13 +148,16 @@ const product = {
 };
 
 console.log(`${product.name} costs $${product.price}.`);
+
+// output:
+// MacBook Pro costs 1999
 ```
 
 ### ECMAScript
 
 ECMAScript defines how the language should behave.
 
-For example, ECMAScript specifies how features such as `let`, `const`, functions, objects, and promises should work.
+For example, ECMAScript specifies how features such as `let`, `const`, `functions`, `objects`, and `promises` should work.
 
 ### JavaScript vs Browser APIs
 
@@ -214,6 +220,9 @@ JavaScript source code is written in a human-readable form:
 const result = 10 + 20;
 
 console.log(result);
+
+// output:
+// 30
 ```
 
 The computer cannot directly execute this source code as it is.
