@@ -1,2 +1,5 @@
-const value = new Number(100);
-console.log(value);
+const value = "hello";
+const numValue = Number(value);
+
+console.log(typeof value); // string
+console.log(typeof numValue); // number

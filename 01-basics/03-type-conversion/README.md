@@ -413,7 +413,7 @@ For predictable code, prefer strict equality in most situations:
 !==
 ```
 
-The detailed equality rules will be covered in the **Operators** topic.
+> The detailed equality rules will be covered in the **Operators** topic.
 
 ---
 
@@ -457,7 +457,7 @@ console.log(value); // NaN
 Use:
 
 ```js
-Number.isNaN(value);
+Number.isNaN(value); // true
 ```
 
 Example:
@@ -482,7 +482,7 @@ const total = Number(price) * Number(quantity);
 console.log(total); // 998
 ```
 
-This is a common real-world use of explicit type conversion.
+> This is a common real-world use of explicit type conversion.
 
 ---
 
@@ -500,7 +500,7 @@ if (age >= 18) {
 }
 ```
 
-The conversion makes the intended data type explicit.
+> The conversion makes the intended data type explicit.
 
 ---
 
@@ -518,7 +518,7 @@ const price = Number(response.price);
 console.log(price + 100); // 1399
 ```
 
-Understanding the incoming type helps prevent accidental string concatenation.
+> Understanding the incoming type helps prevent accidental string concatenation.
 
 ---
 
@@ -545,9 +545,11 @@ They have different purposes.
 ### Mistake 3: Forgetting that NaN has type number
 
 ```js
-const value = Number("hello");
+const value = "hello";
+const numValue = Number(value);
 
-console.log(typeof value); // number
+console.log(typeof value); // string
+console.log(typeof numValue); // number
 ```
 
 ### Mistake 4: Thinking `"false"` is false
@@ -561,7 +563,7 @@ Boolean("false"); // true
 ```js
 const value = null;
 
-// value.toString(); // TypeError
+value.toString(); // TypeError
 ```
 
 Prefer:
