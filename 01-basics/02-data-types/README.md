@@ -6,10 +6,10 @@ JavaScript is a **dynamically typed** language, which means a variable does not 
 
 ```js
 let value = "Hello";
-console.log(typeof value); // "string"
+console.log(typeof value); // string
 
 value = 100;
-console.log(typeof value); // "number"
+console.log(typeof value); // number
 ```
 
 ---
@@ -63,7 +63,7 @@ Common examples include:
 
 ```js
 const user = {
-  name: "Jack",
+  name: "Jhon",
   age: 25,
 };
 
@@ -97,7 +97,7 @@ const message = `Hello, ${firstName}`;
 You can check a string using `typeof`:
 
 ```js
-console.log(typeof firstName); // "string"
+console.log(typeof firstName); // string
 ```
 
 ### Template Literals
@@ -109,6 +109,9 @@ const name = "Jhon";
 const age = 25;
 
 console.log(`My name is ${name} and I am ${age} years old.`);
+
+// output:
+// My name is Jhon and I am 25 years old.
 ```
 
 ### Important Point
@@ -118,9 +121,10 @@ Strings are primitive and immutable.
 ```js
 let text = "hello";
 
+// Not Allowed
 text[0] = "H";
 
-console.log(text); // "hello"
+console.log(text); // hello
 ```
 
 The original string was not changed.
@@ -129,7 +133,9 @@ The original string was not changed.
 
 ## 4. Number
 
-JavaScript uses the `number` type for both integers and floating-point numbers.
+JavaScript uses the `number` type for both `integers` and `floating-point` numbers.
+
+All types are `number`:
 
 ```js
 const age = 25;
@@ -147,7 +153,7 @@ console.log("hello" * 2); // NaN
 `NaN` means **Not-a-Number**, although its type is still `number`.
 
 ```js
-console.log(typeof NaN); // "number"
+console.log(typeof NaN); // number
 ```
 
 Unlike some languages, JavaScript does not have separate `int` and `float` types.
@@ -161,8 +167,7 @@ Unlike some languages, JavaScript does not have separate `int` and `float` types
 ```js
 const bigNumber = 9007199254740993n;
 
-console.log(bigNumber);
-console.log(typeof bigNumber); // "bigint"
+console.log(typeof bigNumber); // bigint
 ```
 
 You can also use `BigInt()`:
@@ -170,7 +175,7 @@ You can also use `BigInt()`:
 ```js
 const value = BigInt("9007199254740993");
 
-console.log(value);
+console.log(value); // 9007199254740993n
 ```
 
 ### Important Point
@@ -181,10 +186,10 @@ You can't directly mix `Number` and `BigInt` in arithmetic.
 const number = 10;
 const bigInt = 20n;
 
-// number + bigInt; // TypeError
+console.log(number + bigInt); // TypeError
 ```
 
-Convert them explicitly when necessary.
+> Convert them explicitly when necessary.
 
 ---
 
@@ -192,10 +197,7 @@ Convert them explicitly when necessary.
 
 A Boolean represents one of two values:
 
-```js
-true;
-false;
-```
+`true` or `false`
 
 Example:
 
@@ -214,6 +216,8 @@ if (age >= 18) {
 }
 ```
 
+Here: `age >= 18` represents `true`
+
 ---
 
 ## 7. Undefined
@@ -229,13 +233,13 @@ console.log(username); // undefined
 You can also explicitly assign it:
 
 ```js
-let value = undefined;
+let username = undefined;
 ```
 
 Check its type:
 
 ```js
-console.log(typeof undefined); // "undefined"
+console.log(typeof undefined); // undefined
 ```
 
 An uninitialized variable declared with `let` or `var` has the value `undefined`.
@@ -259,12 +263,12 @@ It can be useful when you intentionally want to say:
 There is a famous JavaScript historical behavior/bug:
 
 ```js
-console.log(typeof null); // "object"
+console.log(typeof null); // object
 ```
 
 This is a long-standing JavaScript quirk.
 
-Even though `typeof null` returns `"object"`, `null` is considered a **primitive value**.
+Even though `typeof null` returns `"object"`, `null` is considered as **primitive value**.
 
 ---
 
@@ -294,7 +298,7 @@ const user = {
 console.log(user[id]); // 101
 ```
 
-Symbol is generally an advanced primitive and is not commonly needed in everyday beginner code.
+> Symbol is generally an advanced primitive and is not commonly needed in everyday beginner code.
 
 ---
 
@@ -313,15 +317,15 @@ const user = {
 Access properties:
 
 ```js
-console.log(user.name);
-console.log(user.age);
-console.log(user[isDeveloper]);
+console.log(user.name); // Jhon
+console.log(user.age); // 25
+console.log(user[isDeveloper]); // true
 ```
 
 Objects are non-primitive values.
 
 ```js
-console.log(typeof user); // "object"
+console.log(typeof user); // object
 ```
 
 ---
@@ -337,9 +341,9 @@ const fruits = ["apple", "banana", "mango", "orange"];
 Access elements using an index:
 
 ```js
-console.log(fruits[0]); // "apple"
-console.log(fruits[1]); // "banana"
-console.log(fruits[3]); // "orange"
+console.log(fruits[0]); // apple
+console.log(fruits[1]); // banana
+console.log(fruits[3]); // orange
 ```
 
 Arrays can contain different types:
@@ -353,7 +357,7 @@ const mixArray = ["hello", 100, true, null];
 Arrays are technically objects.
 
 ```js
-console.log(typeof fruits); // "object"
+console.log(typeof fruits); // object
 ```
 
 To check whether a value is specifically an array:
@@ -383,7 +387,7 @@ greet();
 `typeof` reports functions as `"function"`:
 
 ```js
-console.log(typeof greet); // "function"
+console.log(typeof greet); // function
 ```
 
 Although functions are objects in JavaScript's object model, `typeof` gives them the special result `"function"`.
@@ -395,26 +399,26 @@ Although functions are objects in JavaScript's object model, `typeof` gives them
 The `typeof` operator tells you the type of a value.
 
 ```js
-console.log(typeof "Hello"); // "string"
-console.log(typeof 42); // "number"
-console.log(typeof 42n); // "bigint"
-console.log(typeof true); // "boolean"
-console.log(typeof undefined); // "undefined"
-console.log(typeof Symbol()); // "symbol"
-console.log(typeof {}); // "object"
-console.log(typeof []); // "object"
-console.log(typeof function () {}); // "function"
+console.log(typeof "Hello"); // string
+console.log(typeof 42); // number
+console.log(typeof 42n); // bigint
+console.log(typeof true); // boolean
+console.log(typeof undefined); // undefined
+console.log(typeof Symbol()); // symbol
+console.log(typeof {}); // object
+console.log(typeof []); // object
+console.log(typeof function () {}); // function
 ```
 
 ### Important `typeof` Quirks
 
 ```js
-console.log(typeof null); // "object" => historical bug
-console.log(typeof []); // "object"
-console.log(typeof NaN); // "number"
+console.log(typeof null); // object => historical bug
+console.log(typeof []); // object => surprising
+console.log(typeof NaN); // number => surprising
 ```
 
-These results can be surprising, so remember them for debugging and interviews.
+> These results can be surprising, so remember them for debugging and interviews.
 
 ---
 
@@ -427,20 +431,18 @@ A variable can hold a value of one type and later hold a value of another type.
 ```js
 let value = "Hello";
 
-console.log(typeof value); // "string"
+console.log(typeof value); // string
 
 value = 100;
 
-console.log(typeof value); // "number"
+console.log(typeof value); // number
 
 value = true;
 
-console.log(typeof value); // "boolean"
+console.log(typeof value); // boolean
 ```
 
-The variable itself does not have a permanently fixed type.
-
-The current value determines its type.
+> The variable itself does not have a permanently fixed type. The current value determines its type.
 
 ---
 
@@ -474,7 +476,7 @@ The value `10` itself was not changed. The variable now contains `20`.
 
 ### Important Distinction
 
-**Reassignment is not the same as mutation.**
+**Reassignment is not the same as Mutation.**
 
 ```js
 let name = "Jhon";
@@ -482,7 +484,7 @@ let name = "Jhon";
 name = "Alex"; // reassignment
 
 // Not Allowed
-// name[0] = "j" // mutation
+name[0] = "j"; // mutation
 ```
 
 ---
@@ -516,8 +518,8 @@ const user2 = user1;
 
 user2.name = "Alex";
 
-console.log(user1.name); // "Jhon"
-console.log(user2.name); // "Jhon"
+console.log(user1.name); // Alex
+console.log(user2.name); // Alex
 ```
 
 Both variables refer to the same object.
@@ -529,7 +531,7 @@ For beginners, think of it this way:
 - Primitive assignment copies the **value**.
 - Object assignment copies the **reference to the object**.
 
-A deeper discussion of references and object behavior can be explored later with objects and related topics.
+> A deeper discussion of references and object behavior can be explored later with objects and related topics.
 
 ---
 
@@ -561,7 +563,7 @@ Think:
 - `undefined` → **not assigned / unavailable**
 - `null` → **intentionally empty**
 
-This is a useful mental model, although actual JavaScript code can use them in different ways.
+> This is a useful mental model, although actual JavaScript code can use them in different ways.
 
 ---
 
@@ -573,15 +575,7 @@ Some values are **falsy**, meaning they behave like `false` in a Boolean context
 
 Common falsy values include:
 
-```js
-false;
-0 - 0;
-0n;
-("");
-null;
-undefined;
-NaN;
-```
+`false`, `0 - 0`, `0n`, `("")`, `null`, `undefined`, `NaN`
 
 Most other values are truthy.
 
@@ -618,7 +612,7 @@ Boolean([]); // true
 Boolean({}); // true
 ```
 
-You will learn more about Boolean conversion and conditions in the operators/control-flow topics.
+> You will learn more about Boolean conversion and conditions in the operators/control-flow topics.
 
 ---
 
@@ -644,7 +638,7 @@ You will learn more about Boolean conversion and conditions in the operators/con
 ### Mistake 1: Thinking `null` is an object
 
 ```js
-typeof null; // "object"
+typeof null; // object
 ```
 
 This is a historical JavaScript quirk. `null` is a primitive.
@@ -652,7 +646,7 @@ This is a historical JavaScript quirk. `null` is a primitive.
 ### Mistake 2: Thinking arrays have their own `typeof` result
 
 ```js
-typeof []; // "object"
+typeof []; // object
 ```
 
 to check for an array.
@@ -665,7 +659,7 @@ Array.isArray([]);
 ### Mistake 3: Thinking `NaN` has a special `typeof`
 
 ```js
-typeof NaN; // "number"
+typeof NaN; // number
 ```
 
 `NaN` belongs to the Number type.
@@ -681,6 +675,14 @@ value = "world";
 This is reassignment.
 
 The original string was not mutated.
+
+This is mutation, not allowed:
+
+```js
+let value = "hello";
+
+value[0] = "H";
+```
 
 ### Mistake 5: Thinking JavaScript variables have permanent types
 
@@ -698,10 +700,10 @@ This is valid because JavaScript is dynamically typed.
 const a = 10;
 const b = 20n;
 
-// a + b; // TypeError
+console.log(a + b); // TypeError
 ```
 
-Number and BigInt should not be mixed directly in arithmetic.
+> Number and BigInt should not be mixed directly in arithmetic.
 
 ---
 

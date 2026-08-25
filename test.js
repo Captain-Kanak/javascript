@@ -1,14 +1,5 @@
-function example() {
-  if (true) {
-    let message = "Hello";
-    const language = "JavaScript";
-
-    // console.log(message);
-    // console.log(language);
-  }
-
-  console.log(message);
-  console.log(language);
+if (0n) {
+  console.log("Hello World");
+} else {
+  console.log("Goodbye World");
 }
-
-example();
