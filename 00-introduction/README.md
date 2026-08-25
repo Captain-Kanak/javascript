@@ -626,6 +626,9 @@ JavaScript can store values in variables.
 const language = "JavaScript";
 
 console.log(language);
+
+// output:
+// JavaScript
 ```
 
 ### Basic Calculation
@@ -637,6 +640,9 @@ const b = 20;
 const result = a + b;
 
 console.log(result);
+
+// output:
+// 30
 ```
 
 ### Simple Decision
@@ -649,6 +655,9 @@ if (age >= 18) {
 } else {
   console.log("Minor");
 }
+
+// output:
+// Adult
 ```
 
 ---
