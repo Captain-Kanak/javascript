@@ -33,3 +33,33 @@ Control flow is one of the foundations of programming because real-world program
 ---
 
 ## 1. Why Control Flow Matters
+
+Consider an application that checks whether a user can access a dashboard.
+
+The program needs to make a decision:
+
+```text
+Is the user logged in?
+        |
+      Yes → Allow access
+        |
+       No → Reject access
+```
+
+JavaScript can represent this logic using control-flow statements.
+
+```js
+const isLoggedIn = true;
+
+if (isLoggedIn) {
+  console.log("Access granted");
+} else {
+  console.log("Access denied");
+}
+```
+
+Without control flow, programs would have very limited ability to make decisions or repeat tasks.
+
+---
+
+## 2. Types of Control Flow
