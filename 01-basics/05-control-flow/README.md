@@ -63,3 +63,112 @@ Without control flow, programs would have very limited ability to make decisions
 ---
 
 ## 2. Types of Control Flow
+
+The major control-flow mechanisms in JavaScript include:
+
+**Conditional Statements**
+
+- `if`
+- `else`
+- `else if`
+- Nested conditions
+
+**Switch Statement**
+
+- `switch`
+- `case`
+- `default`
+- `break`
+
+**Loops**
+
+- `for`
+- `while`
+- `do...while`
+
+**Loop Control**
+
+- `break`
+- `continue`
+
+Special Loop Forms
+
+- `for...of`
+- `for...in`
+
+Other Control-Flow Concepts
+
+- Conditional expressions
+- Early return
+- Nested control flow
+
+Some topics, such as asynchronous control flow and error-handling control flow, will be treated separately because they involve concepts beyond basic sequential execution.
+
+---
+
+## 3. `if` Statement
+
+The if statement executes a block of code only when a condition is truthy.
+
+**Syntax**
+
+```js
+if (condition) {
+  // code
+}
+```
+
+Example:
+
+```js
+const age = 20;
+
+if (age >= 18) {
+  console.log("You are an adult");
+}
+```
+
+Since `age >= 18` evaluates to `true`, the block executes.
+
+---
+
+## 4. Conditions and Boolean Values
+
+Conditions are commonly created using comparison operators.
+
+```js
+const score = 80;
+
+if (score >= 50) {
+  console.log("Passed");
+}
+```
+
+The condition:
+
+```js
+score >= 50;
+```
+
+produces:
+
+```js
+true;
+```
+
+Logical operators can also be used:
+
+```js
+const age = 25;
+const hasTicket = true;
+
+if (age >= 18 && hasTicket) {
+  console.log("Entry allowed");
+}
+```
+
+> The detailed behavior of operators is covered in the `Operators` topic.
+
+---
+
+## 5. Truthy and Falsy Conditions
