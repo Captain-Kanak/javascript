@@ -1246,49 +1246,64 @@ A simple way to remember:
 
 ## 44. Combining Arrays With Spread Syntax
 
-The spread syntax ... can be used to combine arrays.
+The spread syntax `...` can be used to combine arrays.
 
+```js
 const first = [1, 2, 3];
 const second = [4, 5, 6];
 
 const combined = [...first, ...second];
 
 console.log(combined);
+```
 
 Output:
 
+```text
 [1, 2, 3, 4, 5, 6]
+```
 
 This creates a new array.
 
-45. Copying an Array
+---
+
+## 45. Copying an Array
 
 You can create a shallow copy using spread syntax:
 
+```js
 const original = [1, 2, 3];
 
 const copy = [...original];
 
 console.log(copy);
+```
 
-Now copy and original are separate array objects.
+Now `copy` and `original` are separate array objects.
 
+```js
 copy.push(4);
 
 console.log(original);
 console.log(copy);
+```
 
 Output:
 
+```text
 [1, 2, 3]
 [1, 2, 3, 4]
+```
 
 The concept of shallow copying becomes more important when working with nested objects and arrays.
 
-46. Destructuring Arrays
+---
+
+## 46. Destructuring Arrays
 
 Array destructuring allows values to be extracted into variables.
 
+```js
 const fruits = ["Apple", "Banana", "Mango"];
 
 const [first, second, third] = fruits;
@@ -1296,33 +1311,47 @@ const [first, second, third] = fruits;
 console.log(first);
 console.log(second);
 console.log(third);
+```
 
 Output:
 
+```text
 Apple
 Banana
 Mango
+```
 
 The variables receive values according to their positions.
 
-47. Skipping Elements During Destructuring
+---
+
+## 47. Skipping Elements During Destructuring
 
 You can skip elements using empty positions.
 
+```js
 const numbers = [10, 20, 30];
 
 const [first, , third] = numbers;
 
 console.log(first);
 console.log(third);
+```
 
 Output:
 
+```text
 10
-30 48. Rest Syntax With Array Destructuring
+30
+```
+
+---
+
+## 48. Rest Syntax With Array Destructuring
 
 The rest syntax can collect remaining elements.
 
+```js
 const numbers = [10, 20, 30, 40, 50];
 
 const [first, second, ...remaining] = numbers;
@@ -1330,174 +1359,246 @@ const [first, second, ...remaining] = numbers;
 console.log(first);
 console.log(second);
 console.log(remaining);
+```
 
 Output:
 
+```text
 10
 20
-[30, 40, 50] 49. Nested Arrays
+[30, 40, 50]
+```
+
+---
+
+## 49. Nested Arrays
 
 Arrays can contain other arrays.
 
+```js
 const numbers = [
-[1, 2],
-[3, 4],
-[5, 6],
+  [1, 2],
+  [3, 4],
+  [5, 6],
 ];
+```
 
 Accessing nested values:
 
+```js
 console.log(numbers[0][0]);
 console.log(numbers[1][1]);
+```
 
 Output:
 
+```text
 1
 4
+```
 
 Nested arrays are useful for representing grid-like or matrix-style data.
 
-50. Arrays of Objects
+---
+
+## 50. Arrays of Objects
 
 A very common real-world structure is an array of objects.
 
+```js
 const users = [
-{
-id: 1,
-name: "Alice",
-age: 25,
-},
-{
-id: 2,
-name: "Bob",
-age: 30,
-},
-{
-id: 3,
-name: "Charlie",
-age: 28,
-},
+  {
+    id: 1,
+    name: "Alice",
+    age: 25,
+  },
+  {
+    id: 2,
+    name: "Bob",
+    age: 30,
+  },
+  {
+    id: 3,
+    name: "Charlie",
+    age: 28,
+  },
 ];
+```
 
 Accessing a user's name:
 
+```js
 console.log(users[0].name);
+```
 
 Output:
 
+```text
 Alice
+```
 
 This structure is extremely common when working with APIs and databases.
 
-51. Filtering an Array of Objects
+---
+
+## 51. Filtering an Array of Objects
 
 For example, find users older than 25:
 
+```js
 const users = [
-{ name: "Alice", age: 25 },
-{ name: "Bob", age: 30 },
-{ name: "Charlie", age: 28 },
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 28 },
 ];
 
 const adults = users.filter((user) => {
-return user.age > 25;
+  return user.age > 25;
 });
 
 console.log(adults);
+```
 
 Output:
 
+```js
 [
-{ name: "Bob", age: 30 },
-{ name: "Charlie", age: 28 }
-] 52. Mapping an Array of Objects
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 28 },
+];
+```
+
+---
+
+## 52. Mapping an Array of Objects
 
 Get only the names:
 
+```js
 const users = [
-{ name: "Alice", age: 25 },
-{ name: "Bob", age: 30 },
-{ name: "Charlie", age: 28 },
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 28 },
 ];
 
 const names = users.map((user) => user.name);
 
 console.log(names);
+```
 
 Output:
 
+```text
 ["Alice", "Bob", "Charlie"]
+```
 
 This pattern is extremely common in frontend and backend development.
 
-53. Finding an Object
-    const users = [
-    { id: 1, name: "Alice" },
-    { id: 2, name: "Bob" },
-    { id: 3, name: "Charlie" },
-    ];
+---
+
+## 53. Finding an Object
+
+```js
+const users = [
+  { id: 1, name: "Alice" },
+  { id: 2, name: "Bob" },
+  { id: 3, name: "Charlie" },
+];
 
 const user = users.find((user) => user.id === 2);
 
 console.log(user);
+```
 
 Output:
 
-{ id: 2, name: "Bob" } 54. Multidimensional Arrays
+```js
+{ id: 2, name: "Bob" }
+```
+
+---
+
+## 54. Multidimensional Arrays
 
 A multidimensional array is an array containing arrays.
 
 Example:
 
+```js
 const matrix = [
-[1, 2, 3],
-[4, 5, 6],
-[7, 8, 9],
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
 ];
+```
 
 Accessing a value:
 
+```js
 console.log(matrix[1][2]);
+```
 
 Output:
 
+```text
 6
+```
 
 The first index selects the inner array.
 
 The second index selects the value inside that inner array.
 
-55. Checking Whether a Value Is an Array
+---
+
+## 55. Checking Whether a Value Is an Array
 
 Use:
 
+```js
 Array.isArray(value);
+```
 
 Example:
 
+```js
 console.log(Array.isArray([1, 2, 3]));
+```
 
 Output:
 
-true
+```js
+true;
+```
+
+Example:
+
+```js
 console.log(Array.isArray("Hello"));
+```
 
 Output:
 
+```text
 false
+```
 
 This is preferred over:
 
-typeof value === "object"
+```js
+typeof value === "object";
+```
 
-because typeof returns "object" for arrays.
+because `typeof` returns `"object"` for arrays.
 
-56. Array References
+---
+
+## 56. Array References
 
 Arrays are objects, so variables store references to them.
 
 Consider:
 
+```js
 const first = [1, 2, 3];
 const second = first;
 
@@ -1505,438 +1606,602 @@ second.push(4);
 
 console.log(first);
 console.log(second);
+```
 
 Output:
 
+```text
 [1, 2, 3, 4]
 [1, 2, 3, 4]
+```
 
 Both variables refer to the same array.
 
 This is different from copying an array using:
 
+```js
 const second = [...first];
+```
 
 Understanding references becomes especially important when working with objects and mutation.
 
-57. Comparing Arrays
+---
+
+## 57. Comparing Arrays
 
 Two separate arrays are not equal just because they contain the same values.
 
+```js
 const first = [1, 2, 3];
 const second = [1, 2, 3];
 
 console.log(first === second);
+```
 
 Output:
 
-false
+```js
+false;
+```
 
 They are two different array objects.
 
 However:
 
+```js
 const first = [1, 2, 3];
 const second = first;
 
 console.log(first === second);
+```
 
 Output:
 
-true
+```js
+true;
+```
 
 Both variables refer to the same array.
 
-58. Common Mistakes
-    Mistake 1: Forgetting Zero-Based Indexing
+---
+
+## 58. Common Mistakes
+
+**Mistake 1: Forgetting Zero-Based Indexing**
 
 Incorrect assumption:
 
+```js
 const fruits = ["Apple", "Banana", "Mango"];
 
 console.log(fruits[1]);
+```
 
 If you expect the first element, this is incorrect.
 
 The first element is:
 
+```js
 fruits[0];
-Mistake 2: Accessing an Invalid Index
+```
+
+**Mistake 2: Accessing an Invalid Index**
+
+```js
 const fruits = ["Apple", "Banana"];
 
 console.log(fruits[5]);
+```
 
 Output:
 
-undefined
+```js
+undefined;
+```
 
 JavaScript does not throw an error simply because an array index does not exist.
 
-Mistake 3: Confusing length With Last Index
+**Mistake 3: Confusing `length` With Last Index**
 
 For:
 
+```js
 const fruits = ["Apple", "Banana", "Mango"];
+```
 
 the length is:
 
+```text
 3
+```
 
 but the last index is:
 
+```text
 2
+```
 
 The last element can be accessed with:
 
+```js
 fruits[fruits.length - 1];
-Mistake 4: Using typeof to Check Arrays
+```
+
+**Mistake 4: Using `typeof` to Check Arrays**
 
 This:
 
+```js
 typeof [];
+```
 
 returns:
 
+```text
 "object"
+```
 
 Use:
 
+```js
 Array.isArray([]);
+```
 
 instead.
 
-Mistake 5: Unexpected Mutation
+**Mistake 5: Unexpected Mutation**
 
 Methods such as:
 
-push()
-pop()
-shift()
-unshift()
-splice()
-sort()
-reverse()
+```js
+push();
+pop();
+shift();
+unshift();
+splice();
+sort();
+reverse();
+```
 
 modify the original array.
 
 Always be aware of whether an array method mutates the original array or returns a new array.
 
-Mistake 6: Incorrect Numeric Sorting
+**Mistake 6: Incorrect Numeric Sorting**
 
 This:
 
+```js
 const numbers = [10, 2, 30, 4];
 
 numbers.sort();
+```
 
 does not perform normal numeric sorting.
 
 Use:
 
+```js
 numbers.sort((a, b) => a - b);
+```
 
 for ascending numeric order.
 
-Mistake 7: Using for...in When You Need Values
+**Mistake 7: Using `for...in` When You Need Values**
 
-for...in gives property keys/indexes:
+`for...in` gives property keys/indexes:
 
+```js
 for (const index in numbers) {
-console.log(index);
+  console.log(index);
 }
+```
 
 For array values, prefer:
 
+```js
 for (const number of numbers) {
-console.log(number);
-} 59. Mutable vs Non-Mutating Array Methods
+  console.log(number);
+}
+```
+
+---
+
+## 59. Mutable vs Non-Mutating Array Methods
 
 Understanding whether a method changes the original array is important.
 
-Common Mutating Methods
+**Common Mutating Methods**
 
 These modify the original array:
 
-push()
-pop()
-shift()
-unshift()
-splice()
-sort()
-reverse()
-Common Non-Mutating Methods
+```js
+push();
+pop();
+shift();
+unshift();
+splice();
+sort();
+reverse();
+```
+
+**Common Non-Mutating Methods**
 
 These generally return a new result without changing the original array:
 
-slice()
-map()
-filter()
-concat()
+```js
+slice();
+map();
+filter();
+concat();
+```
 
 Some methods may have newer immutable alternatives, but the key habit is:
 
-Always know whether the operation changes the original array.
+> Always know whether the operation changes the original array.
 
-60. Practical Example: Shopping Cart
+---
+
+## 60. Practical Example: Shopping Cart
 
 An array can represent a shopping cart.
 
+```js
 const cart = [
-{
-name: "Laptop",
-price: 800,
-quantity: 1,
-},
-{
-name: "Mouse",
-price: 20,
-quantity: 2,
-},
+  {
+    name: "Laptop",
+    price: 800,
+    quantity: 1,
+  },
+  {
+    name: "Mouse",
+    price: 20,
+    quantity: 2,
+  },
 ];
+```
 
 Calculate the total:
 
+```js
 const total = cart.reduce((sum, item) => {
-return sum + item.price \* item.quantity;
+  return sum + item.price * item.quantity;
 }, 0);
 
 console.log(total);
+```
 
 Output:
 
+```text
 840
+```
 
 This pattern is commonly used in e-commerce applications.
 
-61. Practical Example: Student Scores
-    const scores = [85, 72, 90, 65, 95];
+---
+
+## 61. Practical Example: Student Scores
+
+```js
+const scores = [85, 72, 90, 65, 95];
 
 const passingScores = scores.filter((score) => {
-return score >= 70;
+  return score >= 70;
 });
 
 console.log(passingScores);
+```
 
 Output:
 
+```text
 [85, 72, 90, 95]
+```
 
 Calculate the average:
 
+```js
 const total = scores.reduce((sum, score) => {
-return sum + score;
+  return sum + score;
 }, 0);
 
 const average = total / scores.length;
 
-console.log(average); 62. Practical Example: Product Search
+console.log(average);
+```
+
+---
+
+## 62. Practical Example: Product Search
+
+```js
 const products = [
-{ id: 1, name: "Laptop", price: 800 },
-{ id: 2, name: "Mouse", price: 20 },
-{ id: 3, name: "Keyboard", price: 50 },
+  { id: 1, name: "Laptop", price: 800 },
+  { id: 2, name: "Mouse", price: 20 },
+  { id: 3, name: "Keyboard", price: 50 },
 ];
 
 const product = products.find((product) => {
-return product.id === 2;
+  return product.id === 2;
 });
 
 console.log(product);
+```
 
 Output:
 
-{ id: 2, name: "Mouse", price: 20 } 63. Practical Example: Active Users
+```js
+{ id: 2, name: "Mouse", price: 20 }
+```
+
+---
+
+## 63. Practical Example: Active Users
+
+```js
 const users = [
-{ name: "Alice", active: true },
-{ name: "Bob", active: false },
-{ name: "Charlie", active: true },
+  { name: "Alice", active: true },
+  { name: "Bob", active: false },
+  { name: "Charlie", active: true },
 ];
 
 const activeUsers = users.filter((user) => {
-return user.active;
+  return user.active;
 });
 
 console.log(activeUsers);
+```
 
 Output:
 
+```js
 [
-{ name: "Alice", active: true },
-{ name: "Charlie", active: true }
-] 64. Practical Example: Transforming Data
+  { name: "Alice", active: true },
+  { name: "Charlie", active: true },
+];
+```
+
+---
+
+## 64. Practical Example: Transforming Data
 
 Suppose an API returns:
 
+```js
 const users = [
-{ id: 1, name: "Alice" },
-{ id: 2, name: "Bob" },
-{ id: 3, name: "Charlie" },
+  { id: 1, name: "Alice" },
+  { id: 2, name: "Bob" },
+  { id: 3, name: "Charlie" },
 ];
+```
 
 We can create a list of names:
 
+```js
 const names = users.map((user) => user.name);
 
 console.log(names);
+```
 
 Output:
 
+```text
 ["Alice", "Bob", "Charlie"]
+```
 
 This type of transformation is extremely common when working with API responses.
 
-65. Important Array Methods
+---
+
+## 65. Important Array Methods
 
 A few methods are especially important to understand.
 
-Method Purpose
-push() Add to end
-pop() Remove from end
-shift() Remove from beginning
-unshift() Add to beginning
-includes() Check whether value exists
-indexOf() Find index of value
-find() Find first matching element
-findIndex() Find index of first matching element
-some() Check whether at least one matches
-every() Check whether all match
-forEach() Execute function for every element
-map() Transform every element
-filter() Select matching elements
-reduce() Reduce values into one result
-sort() Sort elements
-reverse() Reverse elements
-slice() Copy part of an array
-splice() Add/remove/replace elements
-join() Convert elements into a string
+| Method        | Purpose                              |
+| ------------- | ------------------------------------ |
+| `push()`      | Add to end                           |
+| `pop()`       | Remove from end                      |
+| `shift()`     | Remove from beginning                |
+| `unshift()`   | Add to beginning                     |
+| `includes()`  | Check whether value exists           |
+| `indexOf()`   | Find index of value                  |
+| `find()`      | Find first matching element          |
+| `findIndex()` | Find index of first matching element |
+| `some()`      | Check whether at least one matches   |
+| `every()`     | Check whether all match              |
+| `forEach()`   | Execute function for every element   |
+| `map()`       | Transform every element              |
+| `filter()`    | Select matching elements             |
+| `reduce()`    | Reduce values into one result        |
+| `sort()`      | Sort elements                        |
+| `reverse()`   | Reverse elements                     |
+| `slice()`     | Copy part of an array                |
+| `splice()`    | Add/remove/replace elements          |
+| `join()`      | Convert elements into a string       |
 
 You do not need to memorize every method immediately.
 
-Focus first on understanding what problem each method solves.
+Focus first on understanding **what problem each method solves**.
 
-66. Key Takeaways
-    Arrays store multiple values in a single collection.
-    Arrays use zero-based indexing.
-    The first element has index 0.
-    The length property returns the number of elements.
-    The last index is length - 1.
-    Arrays are objects in JavaScript.
-    Use Array.isArray() to check whether a value is an array.
-    Arrays are mutable.
-    push() adds elements to the end.
-    pop() removes the last element.
-    unshift() adds elements to the beginning.
-    shift() removes the first element.
-    includes() checks whether a value exists.
-    indexOf() finds the index of a value.
-    for, for...of, and forEach() can iterate over arrays.
-    map() transforms array elements into a new array.
-    filter() creates a new array containing matching elements.
-    find() returns the first matching element.
-    some() checks whether at least one element matches.
-    every() checks whether all elements match.
-    reduce() can combine multiple elements into one result.
-    sort() sorts an array and mutates it.
-    reverse() reverses an array and mutates it.
-    slice() creates a portion of an array without modifying the original.
-    splice() modifies the original array.
-    Arrays can contain objects, functions, arrays, and other JavaScript values.
-    Arrays of objects are extremely common in real-world applications.
-    Arrays are reference values, so assigning one array to another variable does not create a copy.
-    Spread syntax can be used to create a shallow copy or combine arrays.
-    Array destructuring can extract values based on their positions.
-    Understanding mutation vs non-mutation is important when working with arrays.
-67. Interview Questions
-    Basic
-    What is an array in JavaScript?
-    Why are arrays useful?
-    How do you create an array?
-    What is zero-based indexing?
-    How do you access an array element?
-    How do you access the last element of an array?
-    What does the length property return?
-    What happens when you access an array index that does not exist?
-    Can a JavaScript array contain different data types?
-    Are arrays objects in JavaScript?
-    Array Methods
-    What is the difference between push() and unshift()?
-    What is the difference between pop() and shift()?
-    What does includes() do?
-    What does indexOf() return when an element is not found?
-    What is the difference between find() and filter()?
-    What is the difference between some() and every()?
-    What does map() return?
-    What is the purpose of reduce()?
-    What is the difference between slice() and splice()?
-    Which common array methods mutate the original array?
-    Does map() modify the original array?
-    Does filter() modify the original array?
-    Does sort() modify the original array?
-    Does reverse() modify the original array?
-    Iteration
-    What is the difference between for...of and for...in?
-    How does forEach() work?
-    What arguments does the forEach() callback receive?
-    When would you use map() instead of forEach()?
-    Can you break out of a forEach() loop using break?
-    References and Mutation
-    Why does assigning one array to another not create a copy?
-    What happens when two variables reference the same array?
-    How can you create a shallow copy of an array?
-    Why does this return false?
-    [1, 2, 3] === [1, 2, 3]
-    What is the difference between array mutation and creating a new array?
-    Practical / Output Questions
-    What is the output?
-    const fruits = ["Apple", "Banana", "Mango"];
+---
+
+## 66. Key Takeaways
+
+- Arrays store multiple values in a single collection.
+- Arrays use zero-based indexing.
+- The first element has index `0`.
+- The `length` property returns the number of elements.
+- The last index is `length - 1`.
+- Arrays are objects in JavaScript.
+- Use `Array.isArray()` to check whether a value is an array.
+- Arrays are mutable.
+- `push()` adds elements to the end.
+- `pop()` removes the last element.
+- `unshift()` adds elements to the beginning.
+- `shift()` removes the first element.
+- `includes()` checks whether a value exists.
+- `indexOf()` finds the index of a value.
+- `for`, `for...of`, and `forEach()` can iterate over arrays.
+- `map()` transforms array elements into a new array.
+- `filter()` creates a new array containing matching elements.
+- `find()` returns the first matching element.
+- `some()` checks whether at least one element matches.
+- `every()` checks whether all elements match.
+- `reduce()` can combine multiple elements into one result.
+- `sort()` sorts an array and mutates it.
+- `reverse()` reverses an array and mutates it.
+- `slice()` creates a portion of an array without modifying the original.
+- `splice()` modifies the original array.
+- Arrays can contain objects, functions, arrays, and other JavaScript values.
+- Arrays of objects are extremely common in real-world applications.
+- Arrays are reference values, so assigning one array to another variable does not create a copy.
+- Spread syntax can be used to create a shallow copy or combine arrays.
+- Array destructuring can extract values based on their positions.
+- Understanding mutation vs non-mutation is important when working with arrays.
+
+---
+
+## 67. Interview Questions
+
+**Basic**
+
+1. What is an array in JavaScript?
+2. Why are arrays useful?
+3. How do you create an array?
+4. What is zero-based indexing?
+5. How do you access an array element?
+6. How do you access the last element of an array?
+7. What does the length property return?
+8. What happens when you access an array index that does not exist?
+9. Can a JavaScript array contain different data types?
+10. Are arrays objects in JavaScript?
+
+**Array Methods**
+
+11. What is the difference between push() and unshift()?
+12. What is the difference between pop() and shift()?
+13. What does includes() do?
+14. What does indexOf() return when an element is not found?
+15. What is the difference between find() and filter()?
+16. What is the difference between some() and every()?
+17. What does map() return?
+18. What is the purpose of reduce()?
+19. What is the difference between slice() and splice()?
+20. Which common array methods mutate the original array?
+21. Does map() modify the original array?
+22. Does filter() modify the original array?
+23. Does sort() modify the original array?
+24. Does reverse() modify the original array?
+
+**Iteration**
+
+25. What is the difference between for...of and for...in?
+26. How does forEach() work?
+27. What arguments does the forEach() callback receive?
+28. When would you use map() instead of forEach()?
+29. Can you break out of a forEach() loop using break?
+
+**References and Mutation**
+
+30. Why does assigning one array to another not create a copy?
+31. What happens when two variables reference the same array?
+32. How can you create a shallow copy of an array?
+33. Why does this return false?
+
+```js
+[1, 2, 3] === [1, 2, 3];
+```
+
+34. What is the difference between array mutation and creating a new array?
+
+**Practical / Output Questions**
+
+35. What is the output?
+
+```js
+const fruits = ["Apple", "Banana", "Mango"];
 
 console.log(fruits[0]);
 console.log(fruits[2]);
-What is the output?
+```
+
+36. What is the output?
+
+```js
 const numbers = [10, 20, 30];
 
 numbers.push(40);
 numbers.pop();
 
 console.log(numbers);
-What is the output?
+```
+
+37. What is the output?
+
+```js
 const numbers = [1, 2, 3, 4];
 
 const result = numbers.map((number) => number \* 2);
 
 console.log(result);
 console.log(numbers);
-What is the output?
+```
+
+38. What is the output?
+
+```js
 const numbers = [1, 2, 3, 4, 5];
 
 const result = numbers.filter((number) => number > 3);
 
 console.log(result);
-What is the output?
+```
+
+39. What is the output?
+
+```js
 const numbers = [10, 20, 30, 40];
 
 const result = numbers.find((number) => number > 20);
 
 console.log(result);
-What is the output?
+```
+
+40. What is the output?
+
+```js
 const numbers = [2, 4, 6];
 
 console.log(numbers.every((number) => number % 2 === 0));
-What is the output?
+```
+
+41. What is the output?
+
+```js
 const numbers = [1, 2, 3];
 
 const total = numbers.reduce((sum, number) => {
-return sum + number;
+  return sum + number;
 }, 0);
 
 console.log(total);
-What is the output?
+```
+
+42. What is the output?
+
+```js
 const first = [1, 2, 3];
 const second = first;
 
 second.push(4);
 
 console.log(first);
-What is the output?
+```
+
+43. What is the output?
+
+```js
 const first = [1, 2, 3];
 const second = [...first];
 
@@ -1944,235 +2209,288 @@ second.push(4);
 
 console.log(first);
 console.log(second);
-Why does this not sort numbers correctly?
+```
+
+44. Why does this not sort numbers correctly?
+
+```js
 const numbers = [10, 2, 30, 4];
 
 numbers.sort();
 
 console.log(numbers);
-How would you correctly sort the numbers in ascending order? 68. Practice
+```
+
+45. How would you correctly sort the numbers in ascending order?
+
+---
+
+## 68. Practice
 
 Try solving these exercises yourself before looking at any solutions.
 
-Do not write the solutions here.
-
-Exercise 1 — Create an Array
+**Exercise 1 — Create an Array**
 
 Create an array containing five different fruit names.
 
 Print the entire array.
 
-Exercise 2 — Access Elements
+**Exercise 2 — Access Elements**
 
 Create an array of five numbers.
 
 Print:
 
-First element
-Third element
-Last element
-Exercise 3 — Change an Element
+- First element
+- Third element
+- Last element
+
+**Exercise 3 — Change an Element**
 
 Create an array:
 
+```js
 const colors = ["Red", "Green", "Blue"];
+```
 
-Change "Green" to "Yellow".
+Change `"Green"` to `"Yellow"`.
 
-Exercise 4 — Array Length
+**Exercise 4 — Array Length**
 
 Create an array containing several values.
 
 Print its length.
 
-Exercise 5 — Add Elements
+**Exercise 5 — Add Elements**
 
 Create an empty array.
 
-Add five values using push().
+Add five values using `push()`.
 
-Exercise 6 — Remove Elements
+**Exercise 6 — Remove Elements**
 
 Create an array containing five values.
 
-Remove the last element using pop().
+Remove the last element using `pop()`.
 
 Print:
 
-The removed value
-The updated array
-Exercise 7 — Beginning Operations
+- The removed value
+- The updated array
+
+**Exercise 7 — Beginning Operations**
 
 Create an array of numbers.
 
 Use:
 
-unshift() to add an element to the beginning
-shift() to remove the first element
-Exercise 8 — Check Value
+- `unshift()` to add an element to the beginning
+- `shift()` to remove the first element
+
+**Exercise 8 — Check Value**
 
 Create an array of programming languages.
 
-Check whether "JavaScript" exists using includes().
+Check whether `"JavaScript"` exists using `includes()`.
 
-Exercise 9 — Find Index
+**Exercise 9 — Find Index**
 
 Create an array of numbers.
 
-Use indexOf() to find the position of a specific number.
+Use `indexOf()` to find the position of a specific number.
 
-Exercise 10 — Loop With for
+**Exercise 10 — Loop With `for`**
 
 Create an array of five numbers.
 
-Use a traditional for loop to print every element.
+Use a traditional `for` loop to print every element.
 
-Exercise 11 — Loop With for...of
+**Exercise 11 — Loop With `for...of`**
 
-Repeat the previous exercise using for...of.
+Repeat the previous exercise using `for...of`.
 
-Exercise 12 — forEach()
+**Exercise 12 — `forEach()`**
 
 Create an array of names.
 
-Use forEach() to print:
+Use `forEach()` to print:
 
+```text
 Hello, Alice
 Hello, Bob
 ...
+```
 
 for every name.
 
-Exercise 13 — Double Numbers
+**Exercise 13 — Double Numbers**
 
 Given:
 
+```js
 const numbers = [1, 2, 3, 4, 5];
+```
 
-Use map() to create:
+Use `map()` to create:
 
+```text
 [2, 4, 6, 8, 10]
-Exercise 14 — Square Numbers
+```
+
+**Exercise 14 — Square Numbers**
 
 Given:
 
+```js
 const numbers = [1, 2, 3, 4, 5];
+```
 
-Use map() to create an array containing the squares.
+Use `map()` to create an array containing the squares.
 
 Expected:
 
-[1, 4, 9, 16, 25]
-Exercise 15 — Filter Even Numbers
+```text
+[1, 4, 9, 16, 25];
+```
+
+**Exercise 15 — Filter Even Numbers**
 
 Given:
 
+```js
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+```
 
-Use filter() to create an array containing only even numbers.
+Use `filter()` to create an array containing only even numbers.
 
-Exercise 16 — Filter Positive Numbers
+**Exercise 16 — Filter Positive Numbers**
 
 Given:
 
+```js
 const numbers = [-5, 10, -2, 20, 0, 15];
+```
 
-Use filter() to create an array containing only positive numbers.
+Use `filter()` to create an array containing only positive numbers.
 
-Exercise 17 — Find a Number
+**Exercise 17 — Find a Number**
 
 Given:
 
+```js
 const numbers = [10, 20, 30, 40, 50];
+```
 
-Use find() to find the first number greater than 25.
+Use `find()` to find the first number greater than `25`.
 
-Exercise 18 — Find an Object
+**Exercise 18 — Find an Object**
 
 Given:
 
+```js
 const users = [
-{ id: 1, name: "Alice" },
-{ id: 2, name: "Bob" },
-{ id: 3, name: "Charlie" },
+  { id: 1, name: "Alice" },
+  { id: 2, name: "Bob" },
+  { id: 3, name: "Charlie" },
 ];
+```
 
-Use find() to find the user with ID 2.
+Use `find()` to find the user with ID `2`.
 
-Exercise 19 — Find Index
+**Exercise 19 — Find Index**
 
-Given an array of numbers, use findIndex() to find the index of the first number greater than 50.
+Given an array of numbers, use `findIndex()` to find the index of the first number greater than `50`.
 
-Exercise 20 — some()
+**Exercise 20 — `some()`**
 
 Given an array of numbers, check whether at least one number is negative.
 
-Exercise 21 — every()
+**Exercise 21 — `every()`**
 
 Given an array of numbers, check whether all numbers are positive.
 
-Exercise 22 — Sum With reduce()
+**Exercise 22 — Sum With `reduce()`**
 
 Given:
 
+```js
 const numbers = [10, 20, 30, 40, 50];
+```
 
-Use reduce() to calculate the total.
+Use `reduce()` to calculate the total.
 
 Expected:
 
+```text
 150
-Exercise 23 — Find Maximum
+```
+
+**Exercise 23 — Find Maximum**
 
 Given an array of numbers, use array methods to find the largest value.
 
-Exercise 24 — Find Minimum
+**Exercise 24 — Find Minimum**
 
 Given an array of numbers, find the smallest value.
 
-Exercise 25 — Sort Numbers
+**Exercise 25 — Sort Numbers**
 
 Given:
 
+```js
 const numbers = [10, 2, 30, 4, 25];
+```
 
 Sort the numbers in:
 
-Ascending order
-Descending order
-Exercise 26 — Reverse an Array
+1. Ascending order
+2. Descending order
+
+**Exercise 26 — Reverse an Array**
 
 Create an array of five values.
 
-Reverse it using reverse().
+Reverse it using `reverse()`.
 
-Exercise 27 — Join Elements
+**Exercise 27 — Join Elements**
 
 Given:
 
+```js
 const words = ["JavaScript", "is", "powerful"];
+```
 
-Use join() to produce:
+Use `join()` to produce:
 
+```text
 JavaScript is powerful
-Exercise 28 — Slice an Array
+```
+
+**Exercise 28 — Slice an Array**
 
 Given:
 
+```js
 const numbers = [10, 20, 30, 40, 50];
+```
 
-Use slice() to create an array containing:
+Use `slice()` to create an array containing:
 
+```text
 [20, 30, 40]
-Exercise 29 — Splice an Array
+```
+
+**Exercise 29 — Splice an Array**
 
 Given:
 
+```js
 const fruits = ["Apple", "Banana", "Mango"];
+```
 
-Use splice() to replace "Banana" with "Orange".
+Use `splice()` to replace `"Banana"` with `"Orange"`.
 
-Exercise 30 — Copy an Array
+**Exercise 30 — Copy an Array**
 
 Create an array.
 
@@ -2180,192 +2498,218 @@ Create a separate copy using spread syntax.
 
 Modify the copy and verify that the original array has not changed.
 
-Exercise 31 — Combine Arrays
+**Exercise 31 — Combine Arrays**
 
 Given:
 
+```js
 const frontend = ["HTML", "CSS", "JavaScript"];
 const backend = ["Node.js", "Express"];
+```
 
 Create a new array containing all technologies.
 
-Exercise 32 — Array Destructuring
+**Exercise 32 — Array Destructuring**
 
 Given:
 
+```js
 const colors = ["Red", "Green", "Blue"];
+```
 
 Use destructuring to store each color in a separate variable.
 
-Exercise 33 — Skip Elements
+**Exercise 33 — Skip Elements**
 
 Given:
 
+```js
 const numbers = [10, 20, 30, 40];
+```
 
 Use array destructuring to get:
 
+```text
 10
 40
+```
 
 while skipping the middle values.
 
-Exercise 34 — Rest Destructuring
+**Exercise 34 — Rest Destructuring**
 
 Given:
 
+```js
 const numbers = [10, 20, 30, 40, 50];
+```
 
 Use destructuring so that:
 
-first contains 10
-second contains 20
-remaining contains [30, 40, 50]
-Exercise 35 — Nested Array
+- `first` contains `10`
+- `second` contains `20`
+- `remaining` contains `[30, 40, 50]`
+
+**Exercise 35 — Nested Array**
 
 Create a nested array representing:
 
+```text
 1 2 3
 4 5 6
 7 8 9
+```
 
-Access the value 6.
+Access the value `6`.
 
-Exercise 36 — Array of Objects
+**Exercise 36 — Array of Objects**
 
 Create an array containing at least five product objects.
 
 Each product should have:
 
-id
-name
-price
+- `id`
+- `name`
+- `price`
 
 Print all product names.
 
-Exercise 37 — Filter Products
+**Exercise 37 — Filter Products**
 
-Using your product array, find all products with a price greater than 100.
+Using your product array, find all products with a price greater than `100`.
 
-Exercise 38 — Map Product Names
+**Exercise 38 — Map Product Names**
 
 Using your product array, create a new array containing only product names.
 
-Exercise 39 — Calculate Cart Total
+**Exercise 39 — Calculate Cart Total**
 
 Given:
 
+```js
 const cart = [
-{ name: "Laptop", price: 800, quantity: 1 },
-{ name: "Mouse", price: 20, quantity: 2 },
-{ name: "Keyboard", price: 50, quantity: 1 },
+  { name: "Laptop", price: 800, quantity: 1 },
+  { name: "Mouse", price: 20, quantity: 2 },
+  { name: "Keyboard", price: 50, quantity: 1 },
 ];
+```
 
-Calculate the total price using reduce().
+Calculate the total price using `reduce()`.
 
-Exercise 40 — Student Results
+**Exercise 40 — Student Results**
 
 Given:
 
+```js
 const students = [
-{ name: "Alice", score: 85 },
-{ name: "Bob", score: 62 },
-{ name: "Charlie", score: 91 },
-{ name: "David", score: 55 },
+  { name: "Alice", score: 85 },
+  { name: "Bob", score: 62 },
+  { name: "Charlie", score: 91 },
+  { name: "David", score: 55 },
 ];
+```
 
-Find all students who scored 70 or higher.
+Find all students who scored `70` or higher.
 
-Exercise 41 — Student Names
+**Exercise 41 — Student Names**
 
 Using the same students array, create a new array containing only their names.
 
-Exercise 42 — Highest Score
+**Exercise 42 — Highest Score**
 
 Using the students array, find the student with the highest score.
 
-Exercise 43 — Check Passing Students
+**Exercise 43 — Check Passing Students**
 
-Use every() to check whether all students passed.
+Use `every()` to check whether all students passed.
 
-Assume the passing score is 40.
+Assume the passing score is `40`.
 
-Exercise 44 — Check Excellent Student
+**Exercise 44 — Check Excellent Student**
 
-Use some() to check whether at least one student scored 90 or higher.
+Use `some()` to check whether at least one student scored `90` or higher.
 
-Exercise 45 — Remove Duplicates
+**Exercise 45 — Remove Duplicates**
 
 Given:
 
+```js
 const numbers = [1, 2, 2, 3, 4, 4, 5, 5];
+```
 
 Create a new array containing only unique values.
 
-Exercise 46 — Count Occurrences
+**Exercise 46 — Count Occurrences**
 
 Given:
 
-const fruits = [
-"Apple",
-"Banana",
-"Apple",
-"Mango",
-"Banana",
-"Apple",
-];
+```js
+const fruits = ["Apple", "Banana", "Apple", "Mango", "Banana", "Apple"];
+```
 
 Determine how many times each fruit appears.
 
-Exercise 47 — Find Common Values
+**Exercise 47 — Find Common Values**
 
 Given:
 
+```js
 const first = [1, 2, 3, 4, 5];
 const second = [3, 4, 5, 6, 7];
+```
 
 Create a new array containing values that exist in both arrays.
 
 Expected:
 
+```text
 [3, 4, 5]
-Exercise 48 — Flatten Nested Data
+```
+
+**Exercise 48 — Flatten Nested Data**
 
 Given:
 
+```js
 const numbers = [
-[1, 2],
-[3, 4],
-[5, 6],
+  [1, 2],
+  [3, 4],
+  [5, 6],
 ];
+```
 
 Create:
 
+```text
 [1, 2, 3, 4, 5, 6]
-Exercise 49 — Pagination
+```
+
+**Exercise 49 — Pagination**
 
 Given an array of 20 products, write logic that returns products for a specific page.
 
 For example:
 
-page = 2
-itemsPerPage = 5
+```text
+page = 2;
+itemsPerPage = 5;
+```
 
-should return products 6–10.
+should return products `6–10`.
 
-Exercise 50 — Mini Project: Shopping Cart
+**Exercise 50 — Mini Project: Shopping Cart**
 
 Build a small shopping cart using arrays and objects.
 
 Your cart should support:
 
-Add a product
-Remove a product
-Change quantity
-Find a product
-Calculate subtotal
-Calculate total quantity
-Calculate total price
-Check whether the cart is empty
+- Add a product
+- Remove a product
+- Change quantity
+- Find a product
+- Calculate subtotal
+- Calculate total quantity
+- Calculate total price
+- Check whether the cart is empty
 
 Try to use appropriate array methods instead of writing everything with traditional loops.
