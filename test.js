@@ -1,3 +1,8 @@
-const fruits = ["Apple", "Banana", "Mango"];
+const user = {
+  name: "Alice",
+  age: 25,
+};
 
-console.log(fruits);
+for (const key in user) {
+  console.log(key, user[key]);
+}
