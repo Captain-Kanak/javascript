@@ -2,7 +2,7 @@
 
 ## 1. What is JavaScript?
 
-JavaScript is a `high-level`, `interpreted`, `dynamically typed` programming language primarily used to add `behavior`, `logic`, and `interactivity` to applications.
+JavaScript is a `high-level`, `interpreted`, `dynamically typed` programming language. Primarily used to add `behavior`, `logic`, and `interactivity` to applications.
 
 JavaScript was initially created for web browsers, but today it can run in many different environments, including browsers, servers, desktop applications, mobile applications, and command-line tools.
 
@@ -34,7 +34,13 @@ JavaScript can be used to:
 ```js
 const language = "JavaScript";
 
-console.log(`I am learning ${language}!`); // I am learning JavaScript!
+console.log(`I am learning ${language}!`);
+```
+
+Output:
+
+```text
+I am learning JavaScript!
 ```
 
 ---
@@ -136,7 +142,7 @@ JavaScript implements the specification
 
 ### JavaScript
 
-JavaScript is the programming language developers use.
+JavaScript is a programming language developers use.
 
 ```js
 const product = {
@@ -144,7 +150,13 @@ const product = {
   price: 1999,
 };
 
-console.log(`${product.name} costs $${product.price}.`); // MacBook Pro costs 1999
+console.log(`${product.name}, costs $${product.price}.`);
+```
+
+Output:
+
+```text
+MacBook Pro, costs 1999.
 ```
 
 ### ECMAScript
@@ -213,7 +225,13 @@ JavaScript source code is written in a human-readable form:
 ```js
 const result = 10 + 20;
 
-console.log(result); // 30
+console.log(result);
+```
+
+Output:
+
+```text
+30
 ```
 
 The computer cannot directly execute this source code as it is.
@@ -226,7 +244,7 @@ The JavaScript engine processes the code and executes the operations required by
 
 V8 is an open-source JavaScript and WebAssembly engine developed by Google.
 
-It is primarily written in C++ and is used by Google Chrome and Chromium-based environments.
+It is primarily written in `C++` and is used by Google Chrome and Chromium-based environments.
 
 Node.js also uses V8 to execute JavaScript.
 
@@ -254,7 +272,7 @@ However, Node.js is not simply V8.
 
 Node.js combines V8 with additional components and APIs that allow JavaScript to run outside the browser.
 
-### What V8 Does
+### What V8 Does?
 
 V8 is responsible for executing JavaScript and WebAssembly.
 
@@ -332,12 +350,24 @@ Node.js Runtime
 
 For example:
 
+file.txt:
+
+```text
+Hello World!
+```
+
 ```js
 import fs from "fs";
 
 const data = fs.readFileSync("file.txt", "utf8");
 
-console.log(data); // "Hello world" from the file
+console.log(data);
+```
+
+Output:
+
+```text
+"Hello world"
 ```
 
 The file system functionality comes from Node.js, not from the ECMAScript language itself.
@@ -396,7 +426,7 @@ JavaScript can also run in other environments and runtimes, such as:
 - React Native environments
 - Serverless environments
 
-The available APIs and capabilities depend on the runtime.
+The available APIs and additional capabilities depend on the runtime.
 
 ---
 
@@ -441,8 +471,16 @@ Buffer;
 Example:
 
 ```js
-console.log(process.version); // v24.11.0
+console.log(process.version);
 ```
+
+Output:
+
+```text
+v24.11.0
+```
+
+`N.B.` installed version on your device.
 
 ### Comparison
 
@@ -469,6 +507,22 @@ Runtime Environment
      └── Node.js APIs
 ```
 
+So the relationship is more like:
+
+```text
+              JavaScript
+                  │
+          ┌───────┴────────┐
+          ↓                ↓
+       Browser           Node.js
+          │                │
+     Browser APIs      Node APIs
+          │                │
+          └───────┬────────┘
+                  ↓
+        Some shared Web APIs
+```
+
 ---
 
 ## 9. How Does JavaScript Execute Code?
@@ -487,7 +541,7 @@ Optimization
 Execution
 ```
 
-Modern JavaScript engines use a combination of interpretation, compilation, and runtime optimization techniques.
+> Modern JavaScript engines use a combination of interpretation, compilation, and runtime optimization techniques.
 
 ### Example
 
@@ -497,7 +551,13 @@ const b = 20;
 
 const result = a + b;
 
-console.log(result); // 30
+console.log(result);
+```
+
+Output:
+
+```text
+30
 ```
 
 The engine processes the source code and executes the required operations.
@@ -507,11 +567,17 @@ The engine processes the source code and executes the required operations.
 JavaScript uses a call stack to keep track of currently executing functions.
 
 ```js
-function greet(user) {
-  console.log(`Hello ${user}.`);
+function greet(userName) {
+  console.log(`Hello ${userName}.`);
 }
 
-greet("Jhon"); // Hello Jhon.
+greet("Jhon");
+```
+
+Output:
+
+```text
+Hello Jhon.
 ```
 
 Conceptually:
@@ -528,27 +594,122 @@ Call Stack
 
 When `greet()` finishes, its execution context is removed from the stack.
 
+### Event Loop
+
+The **event loop** coordinates asynchronous tasks by checking whether the call stack is empty and then moving queued callbacks to the call stack for execution.
+
+Example:
+
+```js
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout");
+}, 0);
+
+console.log("End");
+```
+
+Output:
+
+```text
+Start
+End
+Timeout
+```
+
+Conceptually:
+
+**1. Synchronous code runs first**
+
+```text
+Call Stack
+
+┌─────────────┐
+│   global    │
+└─────────────┘
+```
+
+Output:
+
+```text
+Start
+```
+
+**2. `setTimeout()` registers the callback with the runtime.**
+
+```text
+Runtime
+   ↓
+Timer
+   ↓
+Task Queue
+┌─────────────────┐
+│ Timeout callback│
+└─────────────────┘
+```
+
+**3. JavaScript continues executing synchronous code.**
+
+Output:
+
+```text
+End
+```
+
+**4. Global code finishes.**
+
+```text
+Call Stack
+
+(empty)
+```
+
+**5. Event Loop sees that the Call Stack is empty and moves the queued callback to the Call Stack.**
+
+```text
+Call Stack
+
+┌─────────────────┐
+│ Timeout callback│
+└─────────────────┘
+```
+
+**6. Callback executes.**
+
+Output:
+
+```text
+Timeout
+```
+
+The important point is:
+
+> The event loop continuously checks whether the call stack is available and coordinates when queued asynchronous callbacks can be moved to the call stack for execution.
+
 ### Asynchronous Operations
 
 JavaScript can also handle asynchronous operations through the runtime environment.
 
-A simplified view:
+So the overall flow is:
 
 ```text
-JavaScript
-    ↓
-Call Stack
-    ↓
-Runtime APIs
-    ↓
-Task / Microtask Queues
-    ↓
-Event Loop
-    ↓
-Call Stack
+Synchronous Code
+      ↓
+  Call Stack
+      ↓
+Async Operation
+      ↓
+ Runtime API
+      ↓
+   Task Queue
+      ↓
+  Event Loop
+      ↓
+  Call Stack
+      ↓
+  Callback executes
 ```
-
-The event loop and asynchronous execution will be covered in much more detail in the **Asynchronous JavaScript** section.
 
 ---
 
@@ -557,7 +718,13 @@ The event loop and asynchronous execution will be covered in much more detail in
 The simplest JavaScript program can print a message to the console.
 
 ```js
-console.log("Hello, JavaScript!"); // Hello, JavaScript!
+console.log("Hello, JavaScript!");
+```
+
+Output:
+
+```text
+Hello, JavaScript!
 ```
 
 ### Running in a Browser
@@ -565,7 +732,13 @@ console.log("Hello, JavaScript!"); // Hello, JavaScript!
 JavaScript can be executed using the browser's developer console.
 
 ```js
-console.log("Hello from the browser!"); // Hello from the browser!
+console.log("Hello from the browser!");
+```
+
+Output:
+
+```text
+Hello from the browser!
 ```
 
 ### Running with Node.js
@@ -590,8 +763,8 @@ node hello.js
 
 output:
 
-```js
-// Hello from Node.js!
+```text
+Hello from Node.js!
 ```
 
 ### Variables
@@ -601,7 +774,13 @@ JavaScript can store values in variables.
 ```js
 const language = "JavaScript";
 
-console.log(language); // JavaScript
+console.log(language);
+```
+
+Output:
+
+```text
+JavaScript
 ```
 
 ### Basic Calculation
@@ -612,7 +791,13 @@ const b = 20;
 
 const result = a + b;
 
-console.log(result); // 30
+console.log(result);
+```
+
+Output:
+
+```text
+30
 ```
 
 ### Simple Decision
@@ -625,9 +810,12 @@ if (age >= 18) {
 } else {
   console.log("Minor");
 }
+```
 
-// output:
-// Adult
+Output:
+
+```text
+Adult
 ```
 
 ---
@@ -636,7 +824,7 @@ if (age >= 18) {
 
 - JavaScript is a high-level, dynamically typed programming language.
 - JavaScript was originally created to make web pages more interactive.
-- Brendan Eich created JavaScript in 1995.
+- **Brendan Eich** created JavaScript in `1995`.
 - ECMAScript is the specification that defines the core JavaScript language.
 - A JavaScript engine executes JavaScript code.
 - V8 is a JavaScript engine developed by Google.
@@ -676,7 +864,6 @@ if (age >= 18) {
 17. Is `fetch()` part of ECMAScript?
 18. What is the call stack?
 19. What is the event loop?
-20. What happens when JavaScript code is executed?
 
 ---
 
@@ -692,7 +879,7 @@ Create two numbers and print their sum.
 
 ### Practice 3
 
-Create an `age` variable and print whether the person is an adult or minor.
+Create an `age` variable and print whether the person is an `"Adult"` or `"Minor"`.
 
 ### Practice 4
 

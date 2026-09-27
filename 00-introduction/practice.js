@@ -5,8 +5,6 @@ const myName = "John Doe";
 
 console.log(myName);
 
-// =====================================================================
-
 // PRACTICE 02 — Addition & Arithmetic
 // Task: Create two numbers and print their sum.
 
@@ -15,10 +13,8 @@ const num2 = 20;
 
 console.log(num1 + num2);
 
-// =====================================================================
-
 // PRACTICE 03 — Conditional Statements
-// Task: Create an age variable and determine whether the person is an adult or a minor.
+// Task: Create an `age` variable and print whether the person is an "Adult" or "Minor".
 
 const age = 25;
 
@@ -28,14 +24,12 @@ if (age >= 18) {
   console.log("Minor");
 }
 
-// =====================================================================
-
 // PRACTICE 04 — Template Literals
 // Task: Create variables for:
 //      • your name
 //      • your age
 //      • your profession.
-// Hint: Then print all the information using a template literal.
+// Print them using a template literal.
 
 const myName2 = "John Doe";
 const myAge = 30;
@@ -44,8 +38,6 @@ const profession = "Software Engineer";
 console.log(
   `My name is ${myName2}, I'm ${myAge} years old, and I'm a ${profession}.`,
 );
-
-// =====================================================================
 
 // PRACTICE 05 — Product Calculation
 // Task: Create a product with a price and quantity. Calculate and print the total price.
@@ -57,17 +49,13 @@ const product = {
 };
 
 const totalPrice = product.price * product.quantity;
+
 console.log(
   `The total cost of ${product.quantity} ${product.name} is $${totalPrice}.`,
 );
 
-// =====================================================================
-
 // PRACTICE 06 — Boolean & Conditional Logic
-// Task: Create a variable called `isLoggedIn`.
-// Hint:
-//      If true  → Print "Welcome"
-//      If false → Print "Please log in"
+// Task: Create a variable called `isLoggedIn`. Print `"Welcome"` if the value is `true`, otherwise print `"Please log in"`.
 
 const isLoggedIn = true;
 
@@ -76,8 +64,6 @@ if (isLoggedIn) {
 } else {
   console.log("Please log in");
 }
-
-// =====================================================================
 
 // PRACTICE 07 — String Output
 // Task: Create a JavaScript program that prints:
@@ -91,17 +77,15 @@ console.log(`My name is ${myName3}.`);
 console.log("I am learning JavaScript.");
 console.log("JavaScript was created in 1995.");
 
-// =====================================================================
-
 // PRACTICE 08 — Browser vs Node.js
 // Task: Run one JavaScript program in a browser console and another using Node.js.
-// 🔍 Observe:
+// Observe:
 //      • How the code runs
 //      • Available APIs
 //      • Global objects
 //      • Differences between the two environments
 
-// 🌐 BROWSER PROGRAM
+// BROWSER PROGRAM
 
 console.log("Hello from the Browser!");
 
@@ -113,9 +97,7 @@ console.log("Current URL:", location.href);
 
 console.log("Fetch available:", typeof fetch);
 
-// =====================================================================
-
-// 🟢 NODE.JS PROGRAM
+// NODE.JS PROGRAM
 
 console.log("Hello from Node.js!");
 
