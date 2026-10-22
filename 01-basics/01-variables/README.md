@@ -12,13 +12,19 @@ Here:
 
 - `const` declares the variable.
 - `passion` is the variable name.
-- `=` is the operator.
+- `=` is the assignment operator.
 - `"Developer"` is the value.
 
 We can access the stored value later:
 
 ```js
-console.log(passion); // Developer
+console.log(passion);
+```
+
+Output:
+
+```text
+Developer
 ```
 
 ### Why Do We Need Variables?
@@ -31,7 +37,13 @@ const quantity = 2;
 
 const total = price * quantity;
 
-console.log(total); // 200
+console.log(total);
+```
+
+Output:
+
+```text
+200
 ```
 
 ---
@@ -58,7 +70,7 @@ The variable exists, but no value has been assigned to it yet.
 age = 25;
 ```
 
-The variable is declared and given its initial value.
+The variable is now assigned to its initial value.
 
 ### Declaration & Initialization
 
@@ -77,7 +89,13 @@ A variable can also be declared and initialized at the same time:
 ```js
 var name = "Jhon";
 
-console.log(name); // Jhon
+console.log(name);
+```
+
+Output:
+
+```text
+Jhon
 ```
 
 A `var` variable can be reassigned:
@@ -87,7 +105,13 @@ var age = 20;
 
 age = 25;
 
-console.log(age); // 25
+console.log(age);
+```
+
+Output:
+
+```text
+25
 ```
 
 It can also be redeclared in the same scope:
@@ -96,7 +120,13 @@ It can also be redeclared in the same scope:
 var name = "John";
 var name = "Alex";
 
-console.log(name); // Alex
+console.log(name);
+```
+
+Output:
+
+```text
+Alex
 ```
 
 ### Important Characteristics of `var`
@@ -119,7 +149,13 @@ let age = 20;
 
 age = 25;
 
-console.log(age); // 25
+console.log(age);
+```
+
+Output:
+
+```text
+25
 ```
 
 A `let` variable can be reassigned but cannot be redeclared in the same scope.
@@ -128,10 +164,13 @@ A `let` variable can be reassigned but cannot be redeclared in the same scope.
 let name = "Jhon";
 
 name = "Alex";
+```
 
-// Error
+```js
 let name = "Alex";
 ```
+
+SyntaxError.
 
 ### Important Characteristics of `let`
 
@@ -156,17 +195,19 @@ A `const` variable must be initialized when it is declared.
 ```js
 const name = "Jhon";
 
-// Error
+// SyntaxError
 const name;
 ```
 
-A `const` variable cannot be redeclared and reassigned:
+A `const` variable cannot be redeclared or reassigned:
 
 ```js
 const age = 20;
 
-// Error
+// SyntaxError
 const age = 25;
+
+// TypeError
 age = 30;
 ```
 
