@@ -164,13 +164,10 @@ A `let` variable can be reassigned but cannot be redeclared in the same scope.
 let name = "Jhon";
 
 name = "Alex";
-```
 
-```js
+// SyntaxError
 let name = "Alex";
 ```
-
-SyntaxError.
 
 ### Important Characteristics of `let`
 
@@ -317,8 +314,8 @@ Prefer meaningful names:
 
 ```js
 const productPrice = 100;
-const userAge = 25;
-const totalAmount = 500;
+const productQuantity = 5;
+const totalAmount = productPrice * productQuantity;
 ```
 
 ### Boolean Naming
